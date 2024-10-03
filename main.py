@@ -26,7 +26,7 @@ def main():
 #run VIRUS-----------------------------------------------------------------!
 '''
 - take in credentials from user
-- send credentials to VirusCreator.py
+- send credentials to VirusComp.py
 - 
 '''
 
