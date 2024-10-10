@@ -32,26 +32,6 @@ class UI(QMainWindow):
 
 def main():
     app = QApplication(sys.argv)
-    ex = FunVirusApp()
-    # Where the fun happens
-    '''
-    - Change Audio Output/Volume
-    - Add Fun Image/Gifs
-    - Change display coloring
-    '''
-    ex.show()
-    sys.exit(app.exec_())
-
-
-#run VIRUS-----------------------------------------------------------------!
-'''
-- take in credentials from user
-- send credentials to VirusComp.py
-- 
-'''
-
-###
-
     UIWindow = UI()
     app.exec_()
 
