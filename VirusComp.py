@@ -19,7 +19,7 @@ toggle = [0, 0, 0, 0, 0,]
 #column 3: size (0-1000) pixels
 #column 4: image path
 if toggle[0] == 1:
-    V1 = [0, 0, 0, '/path/to/image.png',]
+    V1 = [0, 0, 0, 'stewie.gif',]
     import tkinter as tk
 
     # select a color as the transparent color
@@ -48,10 +48,6 @@ if toggle[0] == 1:
 
 if toggle[1] == 1:
     V2 = [0, 0, 0, '/path/to/image.png',]
-
-    import time
-import random
-from winotify import Notification, audio
 
 # Message options
 message_choices = [
