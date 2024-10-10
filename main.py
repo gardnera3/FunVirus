@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QTabWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QTabWidget, QScrollArea
 
 
 class UI(QMainWindow):
