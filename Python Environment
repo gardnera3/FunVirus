@@ -1,3 +1,4 @@
 py -m pip
 pip install tk
 pip install PyQt5
+pip install PyQt5Designer
