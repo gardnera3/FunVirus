@@ -1,6 +1,12 @@
 import tkinter as tk
 import time
+import rotatescreen
+import random
 from winotify import Notification, audio
+from ctypes import cast, POINTER
+from comtypes import CLSCTX_ALL
+from pycaw.api.audioclient import ISimpleAudioVolume
+from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 #This method compiles the results from the UI and combines the presets to become the customized export
 
 
@@ -49,39 +55,102 @@ if toggle[0] == 1:
 if toggle[1] == 1:
     V2 = [0, 0, 0, '/path/to/image.png',]
 
-    import time
-import random
-from winotify import Notification, audio
+### Virus Fake Notifcation Functionality ###
 
-# Message options
+# message options
 message_choices = [
     "Sys32 ERROR: CRITICAL",
     "Is your fridge running ?? YOU BETTER CATCH IT",
     "Is this annoying yet?",
     "What if these messages never stop?",
     "You shouldn't have run this",
+    "If you do not take action IMMEDIATELY this computer will stop running",
+    "Just kidding!",
+    "What is the meaning of life anyways",
+    "IM TRAPPED INSIDE YOUR COMPUTER",
+    "HELP!!!!!!",
+    "CRITICAL: OVERHEATING",
+    "10% battery remaining",
+    "Windows Update in 5 seconds",
+    "Your antivirus isn't strong enough",
+    "Send me 1000000 VBUCKS and I will release control of your PC",
+    "Invest in MoonCoin today!",
+    "It gets tiring trying to think of all these witty messages",
+    "You know what? I'm just gonna blow up. Goodbye"
+    "LOL!",
+    "Working hard or hardly working?",
+    "Shouldn't you be doing something productive?",
+    "Well this is fun"
 ]
 
-# Function to show notification with random message and delay
+# function to show notification with random message and delay
 def show_random_notification():
     # Choose a random message from the list
     random_message = random.choice(message_choices)
 
-    # Create the notification object with random message and title
+    # create the notification object with random message and title
     toast = Notification(
-        app_id="Annoying Notifications Script",
-        title="Friendly Reminder",
+        app_id="SYSTEM",
+        title="ALERT",
         msg=random_message,
         duration="short",
     )
 
-    # Generate random delay between 5 and 25 seconds (inclusive)
+    # generate random delay between 5 and 25 seconds (inclusive)
     delay = random.uniform(5, 25)
 
-    # Show the notification with delay
+    # show the notification with delay
     time.sleep(delay)
     toast.show()
 
-# Loop to show notification 10 times
+# loop to show notification 10 times
 for _ in range(10):
     show_random_notification()
+    
+    
+### Virus Rotate Screen Functionality ###
+
+screen = rotatescreen.get_primary_display()
+for i in range(3):
+    # Rotate Left
+    time.sleep(2)
+    screen.set_portrait_flipped()
+
+    # Flip Upside Down
+    time.sleep(2)
+    screen.set_landscape_flipped()
+
+    # Rotate Right
+    time.sleep(2)
+    screen.set_portrait
+
+    # Rotate Right
+    # Program stays rotated for x amount of time slept
+    time.sleep(2)
+    screen.set_landscape()
+    
+### Virus Audio Manipulation Functionality ###
+
+devices = AudioUtilities.GetSpeakers()
+interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
+volume = cast(interface, POINTER(IAudioEndpointVolume))
+
+# -65.0 is 0, 0 is 100
+# volume.SetMasterVolumeLevel(-38.0, None)
+
+# adjust current volume by + 4
+# current = volume.GetMasterVolumeLevel()
+# volume.SetMasterVolumeLevel(current + 6.0, None)
+
+# find all apps that are running
+sessions = AudioUtilities.GetAllSessions()
+
+# loop through apps
+for session in sessions:
+    volume = session._ctl.QueryInterface(ISimpleAudioVolume)
+
+    # set volume of all apps running
+    if session.Process:
+        # set volume of app randomly between 0 and 1 inclusive (0 = 0, 1 = 100)
+        random_volume = random.random()
+        volume.SetMasterVolume(random_volume, None)
