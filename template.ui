@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>919</width>
-    <height>629</height>
+    <width>1628</width>
+    <height>1232</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -33,21 +33,8 @@
 color: #7289da</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_5">
-    <item>
-     <widget class="Line" name="line">
-      <property name="font">
-       <font>
-        <family>Franklin Gothic Medium</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="minimumSize">
        <size>
@@ -114,8 +101,8 @@ color: #7289da</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1084</width>
-             <height>1039</height>
+             <width>1477</width>
+             <height>1109</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -131,7 +118,7 @@ color: #7289da</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">QFrame{border: 5px solid #424549; border-radius: 5px;}</string>
+               <string notr="true">QFrame{border: 2px solid #424549; border-radius: 5px;}</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -185,7 +172,7 @@ color: #7289da</string>
       </widget>
      </widget>
     </item>
-    <item>
+    <item row="1" column="1">
      <widget class="QFrame" name="verticalFrame">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -303,6 +290,13 @@ color: #7289da</string>
       </layout>
      </widget>
     </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar">
@@ -318,7 +312,7 @@ color: #7289da</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>919</width>
+     <width>1628</width>
      <height>21</height>
     </rect>
    </property>
