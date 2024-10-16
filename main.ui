@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>772</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1080</width>
+    <height>772</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Fun Virus | Control Panel</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(40, 43, 48);
+color: #7289da;</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>16</width>
+    <height>16</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="2">
+     <widget class="QFrame" name="mainButtonFrame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>80</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="leftMargin">
+        <number>8</number>
+       </property>
+       <property name="topMargin">
+        <number>5</number>
+       </property>
+       <property name="rightMargin">
+        <number>5</number>
+       </property>
+       <property name="bottomMargin">
+        <number>5</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="saveButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Franklin Gothic Medium</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+                        color: white;
+                        background: #1dd857;
+                        border: 2px solid #1aad47;
+                        border-radius: 5px;
+                    }
+                    QPushButton:pressed {
+                        color: #d7d7d7;
+                        background-color: #18993f;
+                        border: 2px solid #18993f;
+                        border-radius: 5px;
+                    }</string>
+         </property>
+         <property name="text">
+          <string>Save</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="resetButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Franklin Gothic Medium</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+                        color: white;
+                        background: #d43438;
+                        border: 2px solid #b02c2f;
+                        border-radius: 5px;
+                    }
+                    QPushButton:pressed {
+                        color: #d7d7d7;
+                        background-color: #b52d31;
+                        border: 2px solid #b52d31;
+                        border-radius: 5px;
+                    }</string>
+         </property>
+         <property name="text">
+          <string>Reset</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="3">
+     <widget class="Line" name="bottomLine">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <spacer name="leftSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>10</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="0" colspan="3">
+     <widget class="Line" name="topLine">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Franklin Gothic Medium</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTabWidget::pane { 
+                        border: 2px solid #7289da;
+                        border-radius: 5px;
+                    }</string>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Triangular</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>false</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Visuals</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="font">
+           <font>
+            <family>Franklin Gothic Medium</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QFrame{border: 5px ridge #424549; border-radius: 5px;}</string>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>928</width>
+             <height>640</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QFrame" name="visualsFrame">
+              <property name="minimumSize">
+               <size>
+                <width>751</width>
+                <height>488</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QFrame{border: 0p; border-radius: 5px;}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QLabel" name="visualsLabel">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>10</y>
+                 <width>119</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>20</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame{border: 3px solid #7289da; border-radius: 10px;}</string>
+               </property>
+               <property name="text">
+                <string>Visuals</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="visualsMOVCheckBox">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>116</y>
+                 <width>71</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QCheckBox:disabled {
+		color: gray;
+    }
+QCheckBox::indicator {
+                width: 25px;
+                height: 20px;
+            }
+QCheckBox::indicator:checked{
+		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox_mark.png);
+}
+QCheckBox::indicator:unchecked{
+		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox.png);
+}</string>
+               </property>
+               <property name="text">
+                <string>MOV</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="visualsSlidersLabel">
+               <property name="geometry">
+                <rect>
+                 <x>20</x>
+                 <y>380</y>
+                 <width>81</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: white;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Sliders:</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="visualsSpriteModeLabel">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>60</y>
+                 <width>131</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: white;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Sprite Mode:</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="visualsPresetsLabel">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>60</y>
+                 <width>81</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: white;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Presets:</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="visualsPNGCheckBox">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>90</y>
+                 <width>71</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QCheckBox:disabled {
+		color: gray;
+    }
+QCheckBox::indicator {
+                width: 25px;
+                height: 20px;
+            }
+QCheckBox::indicator:checked{
+		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox_mark.png);
+}
+QCheckBox::indicator:unchecked{
+		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox.png);
+}</string>
+               </property>
+               <property name="text">
+                <string>PNG</string>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>16</width>
+                 <height>16</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QLabel" name="visualsSpeedLabel">
+               <property name="geometry">
+                <rect>
+                 <x>22</x>
+                 <y>412</y>
+                 <width>41</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: gray;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Speed:</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="visualsPreviewLabel">
+               <property name="geometry">
+                <rect>
+                 <x>510</x>
+                 <y>370</y>
+                 <width>91</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: white;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Preview:</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="visualsGIFCheckBox">
+               <property name="geometry">
+                <rect>
+                 <x>350</x>
+                 <y>90</y>
+                 <width>51</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QCheckBox:disabled {
+		color: gray;
+    }
+QCheckBox::indicator {
+                width: 25px;
+                height: 20px;
+            }
+QCheckBox::indicator:checked{
+		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox_mark.png);
+}
+QCheckBox::indicator:unchecked{
+		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox.png);
+}</string>
+               </property>
+               <property name="text">
+                <string>GIF</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="visualsSizeLabel">
+               <property name="geometry">
+                <rect>
+                 <x>32</x>
+                 <y>442</y>
+                 <width>31</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: gray;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Size:</string>
+               </property>
+              </widget>
+              <widget class="QWidget" name="verticalLayoutWidget">
+               <property name="geometry">
+                <rect>
+                 <x>510</x>
+                 <y>410</y>
+                 <width>371</width>
+                 <height>191</height>
+                </rect>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <item>
+                 <widget class="QOpenGLWidget" name="visualsPreview_openGLWidget"/>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QLabel" name="visualsSpriteModeLabel_2">
+               <property name="geometry">
+                <rect>
+                 <x>509</x>
+                 <y>60</y>
+                 <width>121</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: white;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Sprite Style:</string>
+               </property>
+              </widget>
+              <widget class="QWidget" name="visualsSpeedWidgetContainer" native="true">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>408</y>
+                 <width>181</width>
+                 <height>30</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid #424549;
+border-radius: 10px;</string>
+               </property>
+               <widget class="QSlider" name="visualsSpeedSlider">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>5</y>
+                  <width>160</width>
+                  <height>21</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border: 0px</string>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="visualsSizeWidgetContainer" native="true">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>442</y>
+                 <width>181</width>
+                 <height>30</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid #424549;
+border-radius: 10px;</string>
+               </property>
+               <widget class="QSlider" name="visualsSizeSlider">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>5</y>
+                  <width>160</width>
+                  <height>21</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border: 0px</string>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QComboBox" name="visualsPresetsComboBox">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>90</y>
+                 <width>151</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QComboBox::down-arrow {
+                image: url('C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/combobox_arrow.png');
+                width: 20px;
+                height: 20px;
+            }
+QComboBox::down-arrow:on {
+                /* in case for later*/
+            }
+QComboBox::drop-down {
+                subcontrol-origin: padding;
+                subcontrol-position: center right;
+                border-left: 0px;
+				width: 12px;
+            }
+QComboBox{
+				border: 2px solid #424549;
+				border-radius: 5px;
+				selection-background-color: #7289da;
+				selection-color: #424549;
+			}
+QComboBox QAbstractItemView {
+                background-color: #1e2124;
+                color: white;
+                selection-background-color: #7289da;
+                selection-color: white;
+                border: 1px solid #444;
+                padding: 5px;
+                margin: 0px;
+                outline: 0px;
+            }</string>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="comboBox_2">
+               <property name="geometry">
+                <rect>
+                 <x>510</x>
+                 <y>90</y>
+                 <width>151</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QComboBox::down-arrow {
+                image: url('C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/combobox_arrow.png');
+                width: 20px;
+                height: 20px;
+            }
+QComboBox::down-arrow:on {
+                /* in case for later*/
+            }
+QComboBox::drop-down {
+                subcontrol-origin: padding;
+                subcontrol-position: center right;
+                border-left: 0px;
+				width: 12px;
+            }
+QComboBox{
+				border: 2px solid #424549;
+				border-radius: 5px;
+				selection-background-color: #7289da;
+				selection-color: #424549;
+			}
+QComboBox QAbstractItemView {
+                background-color: #1e2124;
+                color: white;
+                selection-background-color: #7289da;
+                selection-color: white;
+                border: 1px solid #444;
+                padding: 5px;
+                margin: 0px;
+                outline: 0px;
+            }</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Sounds</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QScrollArea" name="scrollArea_2">
+          <property name="font">
+           <font>
+            <family>Franklin Gothic Medium</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QFrame{border: 5px ridge #424549; border-radius: 5px;}</string>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_3">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>928</width>
+             <height>640</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QFrame" name="frame_3">
+              <property name="styleSheet">
+               <string notr="true">QFrame{border: 0p; border-radius: 5px;}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QLabel" name="label_15">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>10</y>
+                 <width>121</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>20</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame{border: 3px solid #7289da; border-radius: 10px;}</string>
+               </property>
+               <property name="text">
+                <string>Sounds</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Display</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QScrollArea" name="scrollArea_3">
+          <property name="font">
+           <font>
+            <family>Franklin Gothic Medium</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QFrame{border: 5px ridge #424549; border-radius: 5px;}</string>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_4">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>928</width>
+             <height>640</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QFrame" name="frame_4">
+              <property name="styleSheet">
+               <string notr="true">QFrame{border: 0p; border-radius: 5px;}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QLabel" name="label_16">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>10</y>
+                 <width>122</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>20</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame{border: 3px solid #7289da; border-radius: 10px;}</string>
+               </property>
+               <property name="text">
+                <string>Display</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Pop-Ups</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QScrollArea" name="scrollArea_4">
+          <property name="font">
+           <font>
+            <family>Franklin Gothic Medium</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QFrame{border: 5px ridge #424549; border-radius: 5px;}</string>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_5">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>928</width>
+             <height>640</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QFrame" name="frame_5">
+              <property name="styleSheet">
+               <string notr="true">QFrame{border: 0p; border-radius: 5px;}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QLabel" name="label_17">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>10</y>
+                 <width>121</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame{border: 3px solid #7289da; border-radius: 10px;}</string>
+               </property>
+               <property name="text">
+                <string>Pop-Ups</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">selection-color: rgb(255, 255, 0);</string>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="font">
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">selection-color: rgb(255, 255, 255);
+selection-background-color: rgb(66, 69, 73);</string>
+    </property>
+    <property name="title">
+     <string>File</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>false</bool>
+    </property>
+    <addaction name="actionOpen_File"/>
+    <addaction name="separator"/>
+    <addaction name="actionOther_Function"/>
+   </widget>
+   <widget class="QMenu" name="menuOther">
+    <property name="title">
+     <string>Other...</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuOther"/>
+  </widget>
+  <action name="actionOpen_File">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Open File...</string>
+   </property>
+  </action>
+  <action name="actionOther_Function">
+   <property name="text">
+    <string>Other Function...</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
