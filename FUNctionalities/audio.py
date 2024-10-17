@@ -1,4 +1,5 @@
 import random
+import time
 from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 from pycaw.api.audioclient import ISimpleAudioVolume
@@ -15,15 +16,23 @@ volume = cast(interface, POINTER(IAudioEndpointVolume))
 # current = volume.GetMasterVolumeLevel()
 # volume.SetMasterVolumeLevel(current + 6.0, None)
 
-# find all apps that are running
-sessions = AudioUtilities.GetAllSessions()
+#loop 10 times
+for _ in range(10):
+    # find all apps that are running
+    sessions = AudioUtilities.GetAllSessions()
 
-# loop through apps
-for session in sessions:
-    volume = session._ctl.QueryInterface(ISimpleAudioVolume)
+    # loop through apps
+    for session in sessions:
+        volume = session._ctl.QueryInterface(ISimpleAudioVolume)
 
-    # set volume of all apps running
-    if session.Process:
-        # set volume of app randomly between 0 and 1 inclusive (0 = 0, 1 = 100)
-        random_volume = random.random()
-        volume.SetMasterVolume(random_volume, None)
+        # set volume of all apps running
+        if session.Process:
+            # set volume of app randomly between 0 and 1 inclusive (0 = 0, 1 = 100)
+            random_volume = random.random()
+            volume.SetMasterVolume(random_volume, None)
+
+    random_delay = random.randint(20,50)
+    print("wait")
+    time.sleep(random_delay)
+
+print("complete")
