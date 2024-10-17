@@ -79,3 +79,4 @@ animate_gif()
 
 # Start Tkinter event loop
 root.mainloop()
+
