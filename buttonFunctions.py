@@ -2,16 +2,16 @@
 def buttonSort(self, button):
     buttonDict = {
         self.ButtonWidgetSave: saveButton, #[2]
-        self.ButtonWidgetReset: resetButton #[3]
+        self.ButtonWidgetReset: resetButton, #[3]
     }
     buttonDict.get(button, lambda: print('Unknown Pressed.'))()
 
 # [2] Save Button action
 def saveButton():
-    print('Save action!')
+    print('Save button action!')
 
 # [3] Reset Button Action
 def resetButton():
-    print('Reset action!')
+    print('Reset button action!')
 
 # [4] Another (Undeveloped) Button Action
