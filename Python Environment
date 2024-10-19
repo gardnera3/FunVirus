@@ -1,7 +1,9 @@
-py -m pip
 pip install tk
 pip install PyQt5
 pip install PyQt5Designer
 pip install pyinstaller
 pip install winotify
 pip install pillow
+pip install playsound==1.2.2
+pip install comtypes
+pip install pycaw

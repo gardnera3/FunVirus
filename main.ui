@@ -205,7 +205,7 @@ color: #7289da;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QTabWidget::pane { 
-                        border: 2px solid #7289da;
+                        border: 3px solid #7289da;
                         border-radius: 5px;
                     }</string>
       </property>
@@ -224,7 +224,7 @@ color: #7289da;</string>
       <property name="tabBarAutoHide">
        <bool>false</bool>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="visualsTab">
        <attribute name="title">
         <string>Visuals</string>
        </attribute>
@@ -254,8 +254,8 @@ color: #7289da;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>928</width>
-             <height>640</height>
+             <width>926</width>
+             <height>638</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -309,19 +309,7 @@ color: #7289da;</string>
                 </rect>
                </property>
                <property name="styleSheet">
-                <string notr="true">QCheckBox:disabled {
-		color: gray;
-    }
-QCheckBox::indicator {
-                width: 25px;
-                height: 20px;
-            }
-QCheckBox::indicator:checked{
-		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox_mark.png);
-}
-QCheckBox::indicator:unchecked{
-		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox.png);
-}</string>
+                <string notr="true"/>
                </property>
                <property name="text">
                 <string>MOV</string>
@@ -426,19 +414,7 @@ border: 0px;</string>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">QCheckBox:disabled {
-		color: gray;
-    }
-QCheckBox::indicator {
-                width: 25px;
-                height: 20px;
-            }
-QCheckBox::indicator:checked{
-		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox_mark.png);
-}
-QCheckBox::indicator:unchecked{
-		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox.png);
-}</string>
+                <string notr="true"/>
                </property>
                <property name="text">
                 <string>PNG</string>
@@ -512,19 +488,7 @@ border: 0px;</string>
                 </rect>
                </property>
                <property name="styleSheet">
-                <string notr="true">QCheckBox:disabled {
-		color: gray;
-    }
-QCheckBox::indicator {
-                width: 25px;
-                height: 20px;
-            }
-QCheckBox::indicator:checked{
-		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox_mark.png);
-}
-QCheckBox::indicator:unchecked{
-		image: url(C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/checkbox.png);
-}</string>
+                <string notr="true"/>
                </property>
                <property name="text">
                 <string>GIF</string>
@@ -620,7 +584,13 @@ border-radius: 10px;</string>
                  </rect>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border: 0px</string>
+                 <string notr="true">QSlider::handle:horizontal {
+        background-color: #7289da;
+        width: 10px;
+    }
+QSlider {
+        border: 0px;
+    }</string>
                 </property>
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -650,7 +620,13 @@ border-radius: 10px;</string>
                  </rect>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border: 0px</string>
+                 <string notr="true">QSlider::handle:horizontal {
+        background-color: #7289da;
+        width: 10px;
+    }
+QSlider {
+        border: 0px;
+    }</string>
                 </property>
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -672,39 +648,10 @@ border-radius: 10px;</string>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">QComboBox::down-arrow {
-                image: url('C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/combobox_arrow.png');
-                width: 20px;
-                height: 20px;
-            }
-QComboBox::down-arrow:on {
-                /* in case for later*/
-            }
-QComboBox::drop-down {
-                subcontrol-origin: padding;
-                subcontrol-position: center right;
-                border-left: 0px;
-				width: 12px;
-            }
-QComboBox{
-				border: 2px solid #424549;
-				border-radius: 5px;
-				selection-background-color: #7289da;
-				selection-color: #424549;
-			}
-QComboBox QAbstractItemView {
-                background-color: #1e2124;
-                color: white;
-                selection-background-color: #7289da;
-                selection-color: white;
-                border: 1px solid #444;
-                padding: 5px;
-                margin: 0px;
-                outline: 0px;
-            }</string>
+                <string notr="true"/>
                </property>
               </widget>
-              <widget class="QComboBox" name="comboBox_2">
+              <widget class="QComboBox" name="visualsStylesComboBox">
                <property name="geometry">
                 <rect>
                  <x>510</x>
@@ -719,36 +666,7 @@ QComboBox QAbstractItemView {
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">QComboBox::down-arrow {
-                image: url('C:/Users/Modesto/PycharmProjects/FunVirus_Setup/assets/combobox_arrow.png');
-                width: 20px;
-                height: 20px;
-            }
-QComboBox::down-arrow:on {
-                /* in case for later*/
-            }
-QComboBox::drop-down {
-                subcontrol-origin: padding;
-                subcontrol-position: center right;
-                border-left: 0px;
-				width: 12px;
-            }
-QComboBox{
-				border: 2px solid #424549;
-				border-radius: 5px;
-				selection-background-color: #7289da;
-				selection-color: #424549;
-			}
-QComboBox QAbstractItemView {
-                background-color: #1e2124;
-                color: white;
-                selection-background-color: #7289da;
-                selection-color: white;
-                border: 1px solid #444;
-                padding: 5px;
-                margin: 0px;
-                outline: 0px;
-            }</string>
+                <string notr="true"/>
                </property>
               </widget>
              </widget>
@@ -759,7 +677,7 @@ QComboBox QAbstractItemView {
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="soundsTab">
        <attribute name="title">
         <string>Sounds</string>
        </attribute>
@@ -789,8 +707,8 @@ QComboBox QAbstractItemView {
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>928</width>
-             <height>640</height>
+             <width>926</width>
+             <height>638</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -836,9 +754,9 @@ QComboBox QAbstractItemView {
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_3">
+      <widget class="QWidget" name="displaysTab">
        <attribute name="title">
-        <string>Display</string>
+        <string>Displays</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
@@ -866,8 +784,8 @@ QComboBox QAbstractItemView {
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>928</width>
-             <height>640</height>
+             <width>926</width>
+             <height>638</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -887,7 +805,7 @@ QComboBox QAbstractItemView {
                 <rect>
                  <x>10</x>
                  <y>10</y>
-                 <width>122</width>
+                 <width>135</width>
                  <height>41</height>
                 </rect>
                </property>
@@ -902,7 +820,7 @@ QComboBox QAbstractItemView {
                 <string notr="true">QFrame{border: 3px solid #7289da; border-radius: 10px;}</string>
                </property>
                <property name="text">
-                <string>Display</string>
+                <string>Displays</string>
                </property>
               </widget>
              </widget>
@@ -913,7 +831,7 @@ QComboBox QAbstractItemView {
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_4">
+      <widget class="QWidget" name="popupsTab">
        <attribute name="title">
         <string>Pop-Ups</string>
        </attribute>
@@ -943,8 +861,8 @@ QComboBox QAbstractItemView {
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>928</width>
-             <height>640</height>
+             <width>926</width>
+             <height>638</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_7">
