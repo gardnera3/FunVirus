@@ -1,3 +1,5 @@
+import writeToTemp
+
 # [1] Sorting dictionary for each checkbox. If checkbox not defined, print error.
 def checkboxSort(self, checkbox):
     checkboxDict = {
@@ -7,33 +9,32 @@ def checkboxSort(self, checkbox):
     }
     checkboxDict.get(checkbox, lambda: print('Unknown Checkbox.'))(self, checkbox)
 
-
 # [2] Checkbox action for PNG Checkbox
 def pngCheck(self, checkbox):
     toggleVisualsCheckboxes(self, checkbox)
     if checkbox.isChecked():
         print('PNG Checked!')
+        writeToTemp.writeInTempFile('PNG', 0)
     else:
         print('PNG Unchecked!')
-
 
 # [3] Checkbox action for GIF Checkbox
 def gifCheck(self, checkbox):
     toggleVisualsCheckboxes(self, checkbox)
     if checkbox.isChecked():
         print('GIF Checked!')
+        writeToTemp.writeInTempFile('GIF', 0)
     else:
         print('GIF Unchecked!')
-
 
 # [4] Checkbox action for MOV Checkbox
 def movCheck(self, checkbox):
     toggleVisualsCheckboxes(self, checkbox)
     if checkbox.isChecked():
         print('MOV Checked!')
+        writeToTemp.writeInTempFile('MOV', 0)
     else:
         print('MOV Unchecked!')
-
 
 # [5] Function to enable/disable other checkboxes
 def toggleVisualsCheckboxes(self, current_checkbox):
@@ -49,3 +50,4 @@ def toggleVisualsCheckboxes(self, current_checkbox):
         # Enable all checkboxes if the current one is unchecked
         for checkbox in checkboxes:
             checkbox.setEnabled(True)
+            writeToTemp.writeInTempFile('', 0)

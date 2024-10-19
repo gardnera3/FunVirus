@@ -1,64 +1,52 @@
+import os
 import sys
 from PyQt5 import uic
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QCheckBox, QComboBox
+from PyQt5.QtWidgets import QApplication, QMainWindow
 
+# Import widget setup function from widgetSetup.py
+import widgetSetup
 import buttonFunctions
 import checkboxFunctions
-
+import comboboxFunctions
 
 class UI(QMainWindow):
     def __init__(self):
         super(UI, self).__init__()
 
-        self.setWindowIcon(QIcon('Assets/icon.png'))
+        # Set window icon and load the UI
+        self.setWindowIcon(QIcon('assets/icon.png'))
+        uic.loadUi("main.ui", self)
 
-        # [1] Load UI File, so we can easily edit and update via code.
-        uic.loadUi("Main.ui", self)
+        # Handles widget initialization and connections.
+        # It looks ugly, don't look into it.
+        widgetSetup.widgetSetup(self)
 
-        # [2] Widgets that are edited.
-        self.ButtonWidgetSave = self.findChild(QPushButton, "saveButton")
-        self.ButtonWidgetReset = self.findChild(QPushButton, "resetButton")
-        self.CheckBoxWidgetPNG = self.findChild(QCheckBox, "visualsPNGCheckBox")
-        self.CheckBoxWidgetMOV = self.findChild(QCheckBox, "visualsMOVCheckBox")
-        self.CheckBoxWidgetGIF = self.findChild(QCheckBox, "visualsGIFCheckBox")
-        self.ComboBoxWidgetPresets = self.findChild(QComboBox, "visualsPresetsComboBox")
-
-        # [3] Connect buttons to the def clicked function -> buttonFunctions.py -> def buttonSort.
-        self.ButtonWidgetSave.clicked.connect(lambda: self.clicked(self.ButtonWidgetSave))
-        self.ButtonWidgetReset.clicked.connect(lambda: self.clicked(self.ButtonWidgetReset))
-
-        # [4] Connect checkboxes to the def checked function -> checkboxFunctions.py -> def checkboxSort.
-        self.CheckBoxWidgetPNG.toggled.connect(lambda: self.checked(self.CheckBoxWidgetPNG))
-        self.CheckBoxWidgetMOV.toggled.connect(lambda: self.checked(self.CheckBoxWidgetMOV))
-        self.CheckBoxWidgetGIF.toggled.connect(lambda: self.checked(self.CheckBoxWidgetGIF))
-
-        # [5] Add comboboxes
-        self.ComboBoxWidgetPresets.addItems(["Default...", "Stewie Mode", "Thanos Mode", "Sonic Mode"])
-        StewieMode = QIcon('Assets/stewie.png')
-        self.ComboBoxWidgetPresets.setItemIcon(1, StewieMode)
-        ThanosMode = QIcon('Assets/thanos.png')
-        self.ComboBoxWidgetPresets.setItemIcon(2, ThanosMode)
-        SonicMode = QIcon('Assets/sonic.png')
-        self.ComboBoxWidgetPresets.setItemIcon(3, SonicMode)
-
-        # [6] Show App
+        # Show the app
         self.show()
 
-    # [7] Sends button clicks to buttonFunctions.py
+    # Sends button clicks to buttonFunctions.py
     def clicked(self, button):
         buttonFunctions.buttonSort(self, button)
 
-    # [8] Sends checkbox changes to checkboxFunctions.py
+    # Sends checkbox changes to checkboxFunctions.py
     def checked(self, checkbox):
         checkboxFunctions.checkboxSort(self, checkbox)
 
-# [9] --- Main ---
+    # Sends combobox changes to comboboxFunctions.py
+    def selection(self, combobox):
+        comboboxFunctions.comboboxSort(self, combobox)
+
+# Main
 def main():
     app = QApplication(sys.argv)
     UIWindow = UI()
     app.exec_()
 
-# [10] ---> Startup <---
+    # Checks if tempData exists, deletes it when the program ends
+    if os.path.exists("tempData.txt"):
+        os.remove("tempData.txt")
+
+# ---> Startup <---
 if __name__ == '__main__':
     main()
