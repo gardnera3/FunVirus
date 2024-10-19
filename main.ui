@@ -151,6 +151,19 @@ color: #7289da;</string>
       </layout>
      </widget>
     </item>
+    <item row="0" column="0" colspan="3">
+     <widget class="Line" name="topLine">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
     <item row="2" column="0" colspan="3">
      <widget class="Line" name="bottomLine">
       <property name="orientation">
@@ -170,19 +183,6 @@ color: #7289da;</string>
        </size>
       </property>
      </spacer>
-    </item>
-    <item row="0" column="0" colspan="3">
-     <widget class="Line" name="topLine">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
     </item>
     <item row="1" column="1">
      <widget class="QTabWidget" name="tabWidget">
@@ -254,8 +254,8 @@ color: #7289da;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>926</width>
-             <height>638</height>
+             <width>916</width>
+             <height>614</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -707,8 +707,8 @@ QSlider {
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>926</width>
-             <height>638</height>
+             <width>916</width>
+             <height>614</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -723,7 +723,7 @@ QSlider {
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
-              <widget class="QLabel" name="label_15">
+              <widget class="QLabel" name="soundLabel">
                <property name="geometry">
                 <rect>
                  <x>10</x>
@@ -744,6 +744,264 @@ QSlider {
                </property>
                <property name="text">
                 <string>Sounds</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="soundVolumeLabel">
+               <property name="geometry">
+                <rect>
+                 <x>20</x>
+                 <y>412</y>
+                 <width>51</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: gray;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Volume:</string>
+               </property>
+              </widget>
+              <widget class="QWidget" name="soundVolumeWidgetContainer" native="true">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>408</y>
+                 <width>181</width>
+                 <height>30</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid #424549;
+border-radius: 10px;</string>
+               </property>
+               <widget class="QSlider" name="soundVolumeSlide">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>5</y>
+                  <width>160</width>
+                  <height>21</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QSlider::handle:horizontal {
+        background-color: #7289da;
+        width: 10px;
+    }
+QSlider {
+        border: 0px;
+    }</string>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="soundFreqWidgetContainer" native="true">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>442</y>
+                 <width>181</width>
+                 <height>30</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border: 2px solid #424549;
+border-radius: 10px;</string>
+               </property>
+               <widget class="QSlider" name="soundFreqWidgetContainer_2">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>5</y>
+                  <width>160</width>
+                  <height>21</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QSlider::handle:horizontal {
+        background-color: #7289da;
+        width: 10px;
+    }
+QSlider {
+        border: 0px;
+    }</string>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QLabel" name="soundFreqLabel">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>446</y>
+                 <width>71</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: gray;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Frequency:</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="soundSlidersLabel">
+               <property name="geometry">
+                <rect>
+                 <x>20</x>
+                 <y>380</y>
+                 <width>81</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: white;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Sliders:</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="soundPresetsLabel">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>60</y>
+                 <width>181</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: white;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Sound Presets:</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="soundEffectCheckBox_1">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>90</y>
+                 <width>71</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Sound 1</string>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>16</width>
+                 <height>16</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="soundEffectCheckBox_2">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>116</y>
+                 <width>71</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Sound 2</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="soundEffectCheckBox_3">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>142</y>
+                 <width>151</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Random Sound Effect</string>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>16</width>
+                 <height>16</height>
+                </size>
                </property>
               </widget>
              </widget>
@@ -784,8 +1042,8 @@ QSlider {
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>926</width>
-             <height>638</height>
+             <width>916</width>
+             <height>614</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -800,7 +1058,7 @@ QSlider {
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
-              <widget class="QLabel" name="label_16">
+              <widget class="QLabel" name="displayLabel">
                <property name="geometry">
                 <rect>
                  <x>10</x>
@@ -821,6 +1079,131 @@ QSlider {
                </property>
                <property name="text">
                 <string>Displays</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="displayOptionsLabel">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>60</y>
+                 <width>201</width>
+                 <height>21</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                 <underline>false</underline>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: white;
+border: 0px;</string>
+               </property>
+               <property name="text">
+                <string>Display Options:</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="displayRotateCheckbox">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>90</y>
+                 <width>111</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Rotate Screen</string>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>16</width>
+                 <height>16</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="displayBSODCheckbox">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>116</y>
+                 <width>181</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Fake Blue Screen of Death</string>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>16</width>
+                 <height>16</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="displayPopUpsCheckbox">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>142</y>
+                 <width>181</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>8</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string>Pop-Ups</string>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>16</width>
+                 <height>16</height>
+                </size>
                </property>
               </widget>
              </widget>
@@ -861,8 +1244,8 @@ QSlider {
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>926</width>
-             <height>638</height>
+             <width>916</width>
+             <height>614</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -926,7 +1309,7 @@ QSlider {
      <x>0</x>
      <y>0</y>
      <width>1080</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">

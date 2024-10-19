@@ -11,15 +11,27 @@ def widgetSetup(ui_instance):
     current_directory = os.path.dirname(os.path.abspath(__file__))
     assets_directory = os.path.join(current_directory, 'assets')
 
-    # Locate widgets that are going to be edited.
+    ### Locate widgets that are going to be edited. ###
+    # Button Widgets
     ui_instance.ButtonWidgetSave = ui_instance.findChild(QPushButton, "saveButton")
     ui_instance.ButtonWidgetReset = ui_instance.findChild(QPushButton, "resetButton")
+    
+    # CheckBox Widgets
     ui_instance.CheckBoxWidgetPNG = ui_instance.findChild(QCheckBox, "visualsPNGCheckBox")
     ui_instance.CheckBoxWidgetMOV = ui_instance.findChild(QCheckBox, "visualsMOVCheckBox")
     ui_instance.CheckBoxWidgetGIF = ui_instance.findChild(QCheckBox, "visualsGIFCheckBox")
+    ui_instance.CheckBoxWidgetSoundOne = ui_instance.findChild(QCheckBox, "soundEffectCheckBox_1")
+    ui_instance.CheckBoxWidgetSoundTwo = ui_instance.findChild(QCheckBox, "soundEffectCheckBox_2")
+    ui_instance.CheckBoxWidgetSoundThree = ui_instance.findChild(QCheckBox, "soundEffectCheckBox_3")
+    ui_instance.CheckBoxWidgetRotateScreen = ui_instance.findChild(QCheckBox, "displayRotateCheckbox")
+    ui_instance.CheckBoxWidgetBSOD = ui_instance.findChild(QCheckBox, "displayBSODCheckbox")
+    ui_instance.CheckBoxWidgetPopUps = ui_instance.findChild(QCheckBox, "displayPopUpsCheckbox")
+    
+    # Combo Widgets
     ui_instance.ComboBoxWidgetPresets = ui_instance.findChild(QComboBox, "visualsPresetsComboBox")
     ui_instance.ComboBoxWidgetStyles = ui_instance.findChild(QComboBox, "visualsStylesComboBox")
     ui_instance.TabWidgetVisuals = ui_instance.findChild(QTabWidget, "tabWidget")
+    
 
     # stylesheets directory
     checkbox_mark_path = os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')
@@ -30,6 +42,12 @@ def widgetSetup(ui_instance):
     ui_instance.CheckBoxWidgetPNG.setStyleSheet(styles.get_checkbox_styles(checkbox_mark_path, checkbox_unchecked_path))
     ui_instance.CheckBoxWidgetMOV.setStyleSheet(styles.get_checkbox_styles(checkbox_mark_path, checkbox_unchecked_path))
     ui_instance.CheckBoxWidgetGIF.setStyleSheet(styles.get_checkbox_styles(checkbox_mark_path, checkbox_unchecked_path))
+    ui_instance.CheckBoxWidgetSoundOne.setStyleSheet(styles.get_checkbox_styles(checkbox_mark_path, checkbox_unchecked_path))
+    ui_instance.CheckBoxWidgetSoundTwo.setStyleSheet(styles.get_checkbox_styles(checkbox_mark_path, checkbox_unchecked_path))
+    ui_instance.CheckBoxWidgetSoundThree.setStyleSheet(styles.get_checkbox_styles(checkbox_mark_path, checkbox_unchecked_path))
+    ui_instance.CheckBoxWidgetRotateScreen.setStyleSheet(styles.get_checkbox_styles(checkbox_mark_path, checkbox_unchecked_path))
+    ui_instance.CheckBoxWidgetBSOD.setStyleSheet(styles.get_checkbox_styles(checkbox_mark_path, checkbox_unchecked_path))
+    ui_instance.CheckBoxWidgetPopUps.setStyleSheet(styles.get_checkbox_styles(checkbox_mark_path, checkbox_unchecked_path))
 
     # Apply combobox stylesheets
     ui_instance.ComboBoxWidgetPresets.setStyleSheet(styles.get_combobox_styles(arrow_path))
@@ -61,6 +79,12 @@ def widgetSetup(ui_instance):
     ui_instance.CheckBoxWidgetPNG.toggled.connect(lambda: ui_instance.checked(ui_instance.CheckBoxWidgetPNG))
     ui_instance.CheckBoxWidgetMOV.toggled.connect(lambda: ui_instance.checked(ui_instance.CheckBoxWidgetMOV))
     ui_instance.CheckBoxWidgetGIF.toggled.connect(lambda: ui_instance.checked(ui_instance.CheckBoxWidgetGIF))
+    ui_instance.CheckBoxWidgetSoundOne.toggled.connect(lambda: ui_instance.checked(ui_instance.CheckBoxWidgetSoundOne))
+    ui_instance.CheckBoxWidgetSoundTwo.toggled.connect(lambda: ui_instance.checked(ui_instance.CheckBoxWidgetSoundTwo))
+    ui_instance.CheckBoxWidgetSoundThree.toggled.connect(lambda: ui_instance.checked(ui_instance.CheckBoxWidgetSoundThree))
+    ui_instance.CheckBoxWidgetRotateScreen.toggled.connect(lambda: ui_instance.checked(ui_instance.CheckBoxWidgetRotateScreen))
+    ui_instance.CheckBoxWidgetBSOD.toggled.connect(lambda: ui_instance.checked(ui_instance.CheckBoxWidgetBSOD))
+    ui_instance.CheckBoxWidgetPopUps.toggled.connect(lambda: ui_instance.checked(ui_instance.CheckBoxWidgetPopUps))
 
     # Add items to comboboxes
     ui_instance.ComboBoxWidgetPresets.addItems(["Default...", "Stewie Mode", "Thanos Mode", "Sonic Mode"])

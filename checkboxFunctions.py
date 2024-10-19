@@ -6,6 +6,12 @@ def checkboxSort(self, checkbox):
         self.CheckBoxWidgetPNG: pngCheck, #[2]
         self.CheckBoxWidgetGIF: gifCheck, #[3]
         self.CheckBoxWidgetMOV: movCheck, #[4]
+        self.CheckBoxWidgetSoundOne: check, #[5]
+        self.CheckBoxWidgetSoundTwo: check, #[6]
+        self.CheckBoxWidgetSoundThree: check, # [7]
+        self.CheckBoxWidgetRotateScreen: check, #[8]
+        self.CheckBoxWidgetBSOD: check, #[9]
+        self.CheckBoxWidgetPopUps: check, #[10]
     }
     checkboxDict.get(checkbox, lambda: print('Unknown Checkbox.'))(self, checkbox)
 
@@ -35,7 +41,7 @@ def movCheck(self, checkbox):
         writeToTemp.writeInTempFile('MOV', 0)
     else:
         print('MOV Unchecked!')
-
+        
 # [5] Function to enable/disable other checkboxes
 def toggleVisualsCheckboxes(self, current_checkbox):
     # For Visuals Checkboxes
@@ -51,3 +57,13 @@ def toggleVisualsCheckboxes(self, current_checkbox):
         for checkbox in checkboxes:
             checkbox.setEnabled(True)
             writeToTemp.writeInTempFile('', 0)
+            
+# [6] Function for non visual checkboxes (want to be able to check more than one for non visual options)
+def check (self, checkbox):
+    checkBoxName = checkbox.objectName()
+    if checkbox.isChecked():
+        print(f'{checkBoxName} Checked!')
+        writeToTemp.writeInTempFile(checkBoxName, 0)
+    else:
+        print(f'{checkBoxName} Unchecked!')
+            
