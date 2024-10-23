@@ -15,7 +15,7 @@ root.configure(bg='#0078d7')
 
 # Load the BSOD image
 try:
-    image = Image.open("Assets\BSOD.png")
+    image = Image.open("assets\BSOD.png")
     print(f"Image loaded with size: {image.size}")  # Check if the image is loaded
 
     bsod_photo = ImageTk.PhotoImage(image)
