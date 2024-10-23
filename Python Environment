@@ -7,3 +7,4 @@ pip install pillow
 pip install playsound==1.2.2
 pip install comtypes
 pip install pycaw
+pip install opencv-python
