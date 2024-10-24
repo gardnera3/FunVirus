@@ -42,12 +42,12 @@ def show_random_notification():
     )
 
     # generate random delay between 5 and 25 seconds (inclusive)
-    delay = random.uniform(5, 25)
+    delay = random.uniform(5, 15)
 
     # show the notification with delay
     time.sleep(delay)
     toast.show()
 
 # loop to show notification 10 times
-for _ in range(10):
+for _ in range(30):
     show_random_notification()
