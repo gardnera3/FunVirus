@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1418</width>
-    <height>790</height>
+    <width>1433</width>
+    <height>825</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,9 +34,17 @@
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
+#pushButton_2, #pushButton_4, #pushButton_8, #pushButton_10{
+background-color:#1f232a;
+border-style: solid;
+border-color: #16191d;
+border-width: 3px;
+height: 20px;
+border-radius: 10px;
+}
 #centerMenuSubContainer{
 	background-color: #2c313c;
-	border-right: 2px solid #424549;
+	border-right: 3px solid #424549;
 }
 #rightMenuSubContainer{
 	background-color: #2c313c;
@@ -73,6 +81,9 @@
     </property>
     <item alignment="Qt::AlignLeft">
      <widget class="QWidget" name="leftMenuContainer" native="true">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
         <number>0</number>
@@ -91,6 +102,9 @@
        </property>
        <item>
         <widget class="QWidget" name="leftMenuSubContainer" native="true">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <property name="spacing">
            <number>0</number>
@@ -143,8 +157,8 @@
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/align-justify.svg</normaloff>:/icons/icons/align-justify.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/align-justify.svg</normaloff>:/images/Assets/icons/align-justify.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -164,6 +178,9 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
@@ -196,8 +213,8 @@
                 <string>Home</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/home.svg</normaloff>:/icons/icons/home.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/home.svg</normaloff>:/images/Assets/icons/home.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -216,8 +233,8 @@
                 <string>Visuals</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/image.svg</normaloff>:/icons/icons/image.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/image.svg</normaloff>:/images/Assets/icons/image.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -236,8 +253,8 @@
                 <string>Sounds</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/speak.svg</normaloff>:/icons/icons/speak.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/sounds.svg</normaloff>:/images/Assets/icons/sounds.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -256,8 +273,8 @@
                 <string>Displays</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/desktop.svg</normaloff>:/icons/icons/desktop.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/Displays.svg</normaloff>:/images/Assets/icons/Displays.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -276,8 +293,8 @@
                 <string>Pop-Ups</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/alert-triangle.svg</normaloff>:/icons/icons/alert-triangle.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/alert-triangle.svg</normaloff>:/images/Assets/icons/alert-triangle.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -333,8 +350,8 @@
                 <string>Settings</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/settings.svg</normaloff>:/icons/icons/settings.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/settings.svg</normaloff>:/images/Assets/icons/settings.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -353,8 +370,8 @@
                 <string>Information</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/info.svg</normaloff>:/icons/icons/info.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/info.svg</normaloff>:/images/Assets/icons/info.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -373,8 +390,8 @@
                 <string>Help</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/help-circle.svg</normaloff>:/icons/icons/help-circle.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/help-circle.svg</normaloff>:/images/Assets/icons/help-circle.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -393,13 +410,16 @@
       </layout>
      </widget>
     </item>
-    <item alignment="Qt::AlignLeft">
+    <item alignment="Qt::AlignHCenter">
      <widget class="QWidget" name="centerMenuContainer" native="true">
       <property name="minimumSize">
        <size>
         <width>200</width>
         <height>0</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <property name="spacing">
@@ -417,7 +437,7 @@
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item>
+       <item alignment="Qt::AlignHCenter">
         <widget class="QWidget" name="centerMenuSubContainer" native="true">
          <property name="minimumSize">
           <size>
@@ -447,24 +467,29 @@
              <enum>QFrame::NoFrame</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <item>
+             <item alignment="Qt::AlignLeft">
               <widget class="QLabel" name="label">
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                 <underline>true</underline>
+                </font>
+               </property>
                <property name="text">
                 <string>Sub Menu</string>
                </property>
               </widget>
              </item>
              <item alignment="Qt::AlignRight">
-              <widget class="QPushButton" name="pushButton_2">
-               <property name="toolTip">
-                <string>Close Menu</string>
-               </property>
+              <widget class="QPushButton" name="pushButton_5">
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/x-circle.svg</normaloff>:/icons/icons/x-circle.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/x-octagon.svg</normaloff>:/images/Assets/icons/x-octagon.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -487,13 +512,15 @@
             </property>
             <widget class="QWidget" name="page_5">
              <layout class="QVBoxLayout" name="verticalLayout_8">
-              <item alignment="Qt::AlignTop">
+              <item alignment="Qt::AlignLeft|Qt::AlignTop">
                <widget class="QLabel" name="label_2">
                 <property name="font">
                  <font>
                   <pointsize>12</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
+                  <underline>false</underline>
                  </font>
                 </property>
                 <property name="text">
@@ -501,17 +528,81 @@
                 </property>
                </widget>
               </item>
-              <item alignment="Qt::AlignHCenter|Qt::AlignTop">
-               <widget class="QLabel" name="label_21">
+              <item>
+               <widget class="QPushButton" name="pushButton_2">
                 <property name="font">
                  <font>
-                  <pointsize>12</pointsize>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>On/Off Notifications</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="resources.qrc">
+                  <normaloff>:/images/Assets/icons/bell.svg</normaloff>:/images/Assets/icons/bell.svg</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_4">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
                  </font>
                 </property>
                 <property name="text">
-                 <string>Add this later</string>
+                 <string>Max/Min Menu</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="resources.qrc">
+                  <normaloff>:/images/Assets/icons/align-justify.svg</normaloff>:/images/Assets/icons/align-justify.svg</iconset>
                 </property>
                </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_10">
+                <property name="text">
+                 <string>On/Off Quick Info</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="resources.qrc">
+                  <normaloff>:/images/Assets/icons/x-octagon.svg</normaloff>:/images/Assets/icons/x-octagon.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>16</width>
+                  <height>16</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_8">
+                <property name="text">
+                 <string>Close Sub Menu</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="resources.qrc">
+                  <normaloff>:/images/Assets/icons/x-octagon.svg</normaloff>:/images/Assets/icons/x-octagon.svg</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
              </layout>
             </widget>
@@ -530,6 +621,52 @@
                  <string>Information</string>
                 </property>
                </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+               <widget class="QLabel" name="label_35">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Created by: Aidan Gardner, Peter Ngyen, Modesto Rodriguez, Ilya Weinberg.</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_36">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>GUI was made with PyQt5 &amp; Qt Designer.</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
              </layout>
             </widget>
@@ -589,6 +726,9 @@
        <item>
         <widget class="QWidget" name="headerContainer" native="true">
          <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="bottomMargin">
+           <number>5</number>
+          </property>
           <item>
            <widget class="QFrame" name="frame_5">
             <property name="frameShape">
@@ -678,8 +818,8 @@
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/more-horizontal.svg</normaloff>:/icons/icons/more-horizontal.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/more-horizontal.svg</normaloff>:/images/Assets/icons/more-horizontal.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -698,8 +838,8 @@
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/user.svg</normaloff>:/icons/icons/user.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/user.svg</normaloff>:/images/Assets/icons/user.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -742,8 +882,8 @@
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/minus.svg</normaloff>:/icons/icons/minus.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/minus.svg</normaloff>:/images/Assets/icons/minus.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -762,8 +902,8 @@
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/square.svg</normaloff>:/icons/icons/square.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/square.svg</normaloff>:/images/Assets/icons/square.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -782,8 +922,8 @@
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/icons/icons/x.svg</normaloff>:/icons/icons/x.svg</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/images/Assets/icons/x.svg</normaloff>:/images/Assets/icons/x.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -807,10 +947,25 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <layout class="QHBoxLayout" name="horizontalLayout_7">
           <item>
            <widget class="QWidget" name="mainContentsContainer" native="true">
-            <layout class="QVBoxLayout" name="verticalLayout_16">
+            <layout class="QHBoxLayout" name="horizontalLayout_16">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QStackedWidget" name="stackedWidget_3">
                <property name="currentIndex">
@@ -818,7 +973,7 @@
                </property>
                <widget class="QWidget" name="page_3">
                 <layout class="QVBoxLayout" name="verticalLayout_17">
-                 <item>
+                 <item alignment="Qt::AlignLeft|Qt::AlignTop">
                   <widget class="QLabel" name="label_10">
                    <property name="font">
                     <font>
@@ -848,8 +1003,8 @@
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>901</width>
-                      <height>444</height>
+                      <width>814</width>
+                      <height>568</height>
                      </rect>
                     </property>
                     <property name="styleSheet">
@@ -943,8 +1098,8 @@ The top left tabs work for now, working on the other ones.</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>848</width>
-                      <height>465</height>
+                      <width>818</width>
+                      <height>318</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_14">
@@ -1294,9 +1449,9 @@ border-radius: 10px;</string>
                         <widget class="QLabel" name="label_33">
                          <property name="geometry">
                           <rect>
-                           <x>90</x>
+                           <x>110</x>
                            <y>110</y>
-                           <width>221</width>
+                           <width>191</width>
                            <height>20</height>
                           </rect>
                          </property>
@@ -1366,8 +1521,8 @@ border-radius: 10px;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>94</width>
-                      <height>24</height>
+                      <width>76</width>
+                      <height>18</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_15">
@@ -1431,8 +1586,8 @@ border-radius: 10px;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>94</width>
-                      <height>24</height>
+                      <width>76</width>
+                      <height>16</height>
                      </rect>
                     </property>
                     <widget class="QLabel" name="label_30">
@@ -1484,8 +1639,8 @@ border-radius: 10px;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>94</width>
-                      <height>24</height>
+                      <width>76</width>
+                      <height>16</height>
                      </rect>
                     </property>
                     <widget class="QLabel" name="label_31">
@@ -1538,7 +1693,7 @@ border-radius: 10px;</string>
               <number>0</number>
              </property>
              <property name="bottomMargin">
-              <number>0</number>
+              <number>7</number>
              </property>
              <item alignment="Qt::AlignRight">
               <widget class="QWidget" name="rightMenuSubContainer" native="true">
@@ -1546,6 +1701,12 @@ border-radius: 10px;</string>
                 <size>
                  <width>200</width>
                  <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>200</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -1564,30 +1725,35 @@ border-radius: 10px;</string>
                 <property name="bottomMargin">
                  <number>5</number>
                 </property>
-                <item>
+                <item alignment="Qt::AlignTop">
                  <widget class="QFrame" name="frame_8">
                   <property name="frameShape">
                    <enum>QFrame::NoFrame</enum>
                   </property>
                   <layout class="QHBoxLayout" name="horizontalLayout_8">
-                   <item>
+                   <item alignment="Qt::AlignLeft">
                     <widget class="QLabel" name="label_7">
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                       <underline>true</underline>
+                      </font>
+                     </property>
                      <property name="text">
                       <string>Quick Info</string>
                      </property>
                     </widget>
                    </item>
                    <item alignment="Qt::AlignRight">
-                    <widget class="QPushButton" name="pushButton_8">
-                     <property name="toolTip">
-                      <string>Close Menu</string>
-                     </property>
+                    <widget class="QPushButton" name="pushButton_11">
                      <property name="text">
                       <string/>
                      </property>
                      <property name="icon">
-                      <iconset>
-                       <normaloff>:/icons/icons/x-circle.svg</normaloff>:/icons/icons/x-circle.svg</iconset>
+                      <iconset resource="resources.qrc">
+                       <normaloff>:/images/Assets/icons/x-octagon.svg</normaloff>:/images/Assets/icons/x-octagon.svg</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -1610,11 +1776,13 @@ border-radius: 10px;</string>
                   </property>
                   <widget class="QWidget" name="page">
                    <layout class="QVBoxLayout" name="verticalLayout_14">
-                    <item alignment="Qt::AlignHCenter">
+                    <item alignment="Qt::AlignHCenter|Qt::AlignTop">
                      <widget class="QLabel" name="label_8">
                       <property name="font">
                        <font>
                         <pointsize>12</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
                        </font>
                       </property>
                       <property name="text">
@@ -1626,17 +1794,73 @@ border-radius: 10px;</string>
                   </widget>
                   <widget class="QWidget" name="page_2">
                    <layout class="QVBoxLayout" name="verticalLayout_15">
-                    <item alignment="Qt::AlignHCenter">
+                    <item alignment="Qt::AlignLeft|Qt::AlignTop">
                      <widget class="QLabel" name="label_9">
                       <property name="font">
                        <font>
                         <pointsize>12</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                        <underline>false</underline>
+                        <kerning>true</kerning>
                        </font>
                       </property>
                       <property name="text">
                        <string>Visuals Info</string>
                       </property>
                      </widget>
+                    </item>
+                    <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                     <widget class="QLabel" name="label_21">
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Type general information regarding the visuals page, including what does what, etc.</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                      <property name="margin">
+                       <number>0</number>
+                      </property>
+                     </widget>
+                    </item>
+                    <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                     <widget class="QLabel" name="label_34">
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Another example text, showing the spacing</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="verticalSpacer_3">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                     </spacer>
                     </item>
                    </layout>
                   </widget>
@@ -1702,7 +1926,7 @@ border-radius: 10px;</string>
        <item>
         <widget class="QWidget" name="popupNotificationContainer" native="true">
          <layout class="QVBoxLayout" name="verticalLayout_20">
-          <item>
+          <item alignment="Qt::AlignBottom">
            <widget class="QWidget" name="popupNotificationSubContainer" native="true">
             <layout class="QVBoxLayout" name="verticalLayout_21">
              <item>
@@ -1743,7 +1967,7 @@ border-radius: 10px;</string>
                   </property>
                  </widget>
                 </item>
-                <item alignment="Qt::AlignRight">
+                <item>
                  <widget class="QPushButton" name="pushButton_9">
                   <property name="toolTip">
                    <string>Close Notification</string>
@@ -1752,8 +1976,8 @@ border-radius: 10px;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset>
-                    <normaloff>:/icons/icons/x-octagon.svg</normaloff>:/icons/icons/x-octagon.svg</iconset>
+                   <iconset resource="resources.qrc">
+                    <normaloff>:/images/Assets/icons/x-octagon.svg</normaloff>:/images/Assets/icons/x-octagon.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -1772,7 +1996,7 @@ border-radius: 10px;</string>
          </layout>
         </widget>
        </item>
-       <item>
+       <item alignment="Qt::AlignBottom">
         <widget class="QWidget" name="footerContainer" native="true">
          <layout class="QHBoxLayout" name="horizontalLayout_10">
           <property name="spacing">
