@@ -1,11 +1,11 @@
 from PyQt5.QtCore import Qt, reset
 from PyQt5.QtGui import QCursor
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QPushButton, QFrame, QComboBox
+from PyQt5.QtWidgets import QPushButton, QFrame
 import os
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
-assets_directory = os.path.join(current_directory, 'assets')
+assets_directory = os.path.join(current_directory, 'Assets')
 
 def widgetSetup(window):
     # Variables for dragging and resizing
@@ -29,14 +29,27 @@ def widgetSetup(window):
     window.minimizeButton.clicked.connect(window.minimize_window)
     window.maximizeButton.clicked.connect(window.maximize_window)
     window.closeButton.clicked.connect(window.close_window)
+    window.pushButton_6.setText(os.getlogin())
 
-    window.pushButton_9.clicked.connect(lambda: closeNotifs(window))
+    window.pushButton_9.clicked.connect(lambda: changeNotifs(window))
+    window.pushButton_2.clicked.connect(lambda: changeNotifs(window))
+    window.pushButton.clicked.connect(lambda: menuCloseOrOpen(window))
+    window.pushButton_4.clicked.connect(lambda: menuCloseOrOpen(window))
+    window.pushButton_5.clicked.connect(lambda: closeSubMenu(window))
+    window.pushButton_8.clicked.connect(lambda: closeSubMenu(window))
+    window.pushButton_10.clicked.connect(lambda: changeQuickInfo(window))
+    window.pushButton_11.clicked.connect(lambda: changeQuickInfo(window))
+
     ## Tabs
     window.homeButton.clicked.connect(lambda: homeButton(window))
     window.visualsButton.clicked.connect(lambda: visualsButton(window))
     window.soundsButton.clicked.connect(lambda: soundsButton(window))
     window.displaysButton.clicked.connect(lambda: displaysButton(window))
     window.popupsButton.clicked.connect(lambda: popupsButton(window))
+    window.settingsButton.clicked.connect(lambda: settingsButton(window))
+    window.infoButton.clicked.connect(lambda: infoButton(window))
+    window.helpButton.clicked.connect(lambda: helpButton(window))
+
     ## Checkboxes
     window.pngCheckbox.clicked.connect(lambda: pngCheck(window))
     window.pngCheckbox.setStyleSheet(f"""
@@ -102,7 +115,6 @@ def widgetSetup(window):
                 }}""")
 
 def homeButton(window):
-    print('Home Tab accessed!')
     # Highlight (always first) vvv
     window.stackedWidget_3.setCurrentIndex(0)
     window.stackedWidget_2.setCurrentIndex(0)
@@ -132,7 +144,6 @@ def homeButton(window):
             }
         """)
 def visualsButton(window):
-    print('Visuals Tab accessed!')
     window.stackedWidget_3.setCurrentIndex(1)
     window.stackedWidget_2.setCurrentIndex(1)
     window.visualsButton.setStyleSheet("""
@@ -161,7 +172,6 @@ def visualsButton(window):
             }
         """)
 def soundsButton(window):
-    print('Sounds Tab accessed!')
     window.stackedWidget_3.setCurrentIndex(2)
     window.stackedWidget_2.setCurrentIndex(2)
     window.soundsButton.setStyleSheet("""
@@ -189,9 +199,7 @@ def soundsButton(window):
                 background-color: #16191d;
             }
         """)
-
 def displaysButton(window):
-    print('Displays Tab accessed!')
     window.stackedWidget_3.setCurrentIndex(3)
     window.stackedWidget_2.setCurrentIndex(3)
     window.displaysButton.setStyleSheet("""
@@ -219,9 +227,7 @@ def displaysButton(window):
                 background-color: #16191d;
             }
         """)
-
 def popupsButton(window):
-    print('Pop-Ups Tab accessed!')
     window.stackedWidget_3.setCurrentIndex(4)
     window.stackedWidget_2.setCurrentIndex(4)
     window.popupsButton.setStyleSheet("""
@@ -249,11 +255,9 @@ def popupsButton(window):
                 background-color: #16191d;
             }
         """)
-
 def pngCheck(window):
     toggleVisualsCheckboxes(window, window.pngCheckbox)
     if window.pngCheckbox.isChecked():
-        print('PNG Checked!')
         window.pngCheckbox.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
                 image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
@@ -262,7 +266,6 @@ def pngCheck(window):
             }}
         """)
     else:
-        print('PNG Unchecked!')
         window.pngCheckbox.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
@@ -274,7 +277,6 @@ def pngCheck(window):
 def gifCheck(window):
     toggleVisualsCheckboxes(window, window.gifCheckbox)
     if window.gifCheckbox.isChecked():
-        print('GIF Checked!')
         window.gifCheckbox.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
                 image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
@@ -283,7 +285,6 @@ def gifCheck(window):
             }}
         """)
     else:
-        print('GIF Unchecked!')
         window.gifCheckbox.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
@@ -295,7 +296,6 @@ def gifCheck(window):
 def movCheck(window):
     toggleVisualsCheckboxes(window, window.movCheckbox)
     if window.movCheckbox.isChecked():
-        print('MOV Checked!')
         window.movCheckbox.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
                 image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
@@ -304,7 +304,6 @@ def movCheck(window):
             }}
         """)
     else:
-        print('MOV Unchecked!')
         window.movCheckbox.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
@@ -325,9 +324,134 @@ def toggleVisualsCheckboxes(window, current_checkbox):
         for checkbox in checkboxes:
             checkbox.setEnabled(True)
 
-def closeNotifs(window):
-    window.popupNotificationSubContainer.deleteLater()
+def changeNotifs(window):
+    if window.popupNotificationSubContainer.isHidden():
+        window.popupNotificationSubContainer.show()
+    else:
+        window.popupNotificationSubContainer.hide()
+
+def closeSubMenu(window):
+    window.centerMenuContainer.hide()
+    window.settingsButton.setStyleSheet("""
+            QPushButton {
+                background-color: #16191d;
+            }
+        """)
+    window.infoButton.setStyleSheet("""
+            QPushButton {
+                background-color: #16191d;
+            }
+        """)
+    window.helpButton.setStyleSheet("""
+            QPushButton {
+                background-color: #16191d;
+            }
+        """)
 
 def visualsPresets(window):
     current_text = window.comboBox.currentText()
-    print(f"Selected preset: {current_text}")
+
+def menuCloseOrOpen(window):
+    original_button_texts = {
+        'homeButton': 'Home',
+        'displaysButton': 'Displays',
+        'popupsButton': 'Pop-Ups',
+        'soundsButton': 'Sounds',
+        'visualsButton': 'Visuals',
+        'settingsButton' : 'Settings',
+        'infoButton': 'Information',
+        'helpButton': 'Help'
+    }
+    # Check if the buttons currently have text
+    if window.homeButton.text() == "":
+        # Restore the original text to the buttons
+        window.homeButton.setText(original_button_texts['homeButton'])
+        window.displaysButton.setText(original_button_texts['displaysButton'])
+        window.popupsButton.setText(original_button_texts['popupsButton'])
+        window.soundsButton.setText(original_button_texts['soundsButton'])
+        window.visualsButton.setText(original_button_texts['visualsButton'])
+        window.settingsButton.setText(original_button_texts['settingsButton'])
+        window.infoButton.setText(original_button_texts['infoButton'])
+        window.helpButton.setText(original_button_texts['helpButton'])
+    else:
+        # Hide the text (set to an empty string)
+        window.homeButton.setText("")
+        window.displaysButton.setText("")
+        window.popupsButton.setText("")
+        window.soundsButton.setText("")
+        window.visualsButton.setText("")
+        window.settingsButton.setText("")
+        window.infoButton.setText("")
+        window.helpButton.setText("")
+
+    current_width = window.leftMenuContainer.maximumWidth()
+    if current_width == 60:
+        window.leftMenuContainer.setMaximumWidth(16777215)
+    else:
+        window.leftMenuContainer.setMaximumWidth(60)
+
+def settingsButton(window):
+    window.stackedWidget.setCurrentIndex(0)
+    window.centerMenuContainer.show()
+    window.settingsButton.setStyleSheet("""
+            QPushButton {
+                background-color: #1f232a;
+            }
+        """)
+    window.infoButton.setStyleSheet("""
+            QPushButton {
+                background-color: #16191d;
+            }
+        """)
+    window.helpButton.setStyleSheet("""
+            QPushButton {
+                background-color: #16191d;
+            }
+        """)
+def infoButton(window):
+    window.stackedWidget.setCurrentIndex(1)
+    window.centerMenuContainer.show()
+    window.infoButton.setStyleSheet("""
+                QPushButton {
+                    background-color: #1f232a;
+                }
+            """)
+    window.settingsButton.setStyleSheet("""
+                QPushButton {
+                    background-color: #16191d;
+                }
+            """)
+    window.helpButton.setStyleSheet("""
+                QPushButton {
+                    background-color: #16191d;
+                }
+            """)
+def helpButton(window):
+    window.stackedWidget.setCurrentIndex(2)
+    window.centerMenuContainer.show()
+    window.helpButton.setStyleSheet("""
+                QPushButton {
+                    background-color: #1f232a;
+                }
+            """)
+    window.settingsButton.setStyleSheet("""
+                QPushButton {
+                    background-color: #16191d;
+                }
+            """)
+    window.infoButton.setStyleSheet("""
+                QPushButton {
+                    background-color: #16191d;
+                }
+            """)
+def subMenuClose(window):
+    window.centerMenuContainer.hide()
+
+def subMenuOpen(window):
+    window.centerMenuContainer.show()
+
+def changeQuickInfo(window):
+    if window.rightMenuContainer.isHidden():
+        window.rightMenuContainer.show()
+    else:
+        window.rightMenuContainer.hide()
