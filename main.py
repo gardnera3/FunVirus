@@ -5,6 +5,7 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import resources_rc  # Import the compiled resource file
 from widgetSetup import widgetSetup
+import pyinstaller
 
 class UI(QMainWindow):
     def __init__(self):
@@ -61,6 +62,17 @@ def main():
     # Load the main window
     UIWindow = UI()
     app.exec_()
+
+    toggle = [0,0,0,0,0,0,0,0]
+    # 0 = stewie.py
+    # 1 = BSOD.py
+    # 2 = UpdateScreen.py
+    # 3 = notifications.py
+    # 4 = play_sound.py
+    # 5 = audio.py
+    # 6 = youtube.py
+    # 7 = rotate.py
+
 
 # ---> Startup <---
 if __name__ == '__main__':
