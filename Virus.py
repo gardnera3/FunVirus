@@ -4,7 +4,7 @@ import time
 # import main  # Uncomment this if `main` is needed
 
 # Sample toggle array and file array
-toggle_array = [0, 1, 0, 0, 0, 0, 0, 0]
+toggle_array = [1, 0, 0, 0, 0, 0, 0, 0]
 file_array = [
     "FUNctionalities.stewietest", 
     "FUNctionalities.BSOD", 

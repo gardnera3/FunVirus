@@ -24,7 +24,7 @@ if os.path.isfile(script_path):
     pyinstaller_cmd = [
         "pyinstaller",
         "--onefile",
-        "--console",
+        "--noconsole",
         f"--add-data={assets_folder};assets",  # Include assets folder
         script_path,
     ] + [f"--hidden-import={module}" for module in additional_modules]
