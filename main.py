@@ -16,16 +16,8 @@ class UI(QMainWindow):
         # Call widgetSetup (button functions, checkboxes, etc.)
         widgetSetup(self)
 
-        # Create a big red "EXPORT!" button
-        self.export_button = QPushButton("EXPORT!")
-        self.export_button.setFixedSize(100, 160)  # Set button size
-        self.export_button.setStyleSheet("background-color: red; color: white; font-size: 20px;")
-        self.export_button.clicked.connect(self.run_script)  # Connect button to run script
-
-        # Add the button to the bottom of the main layout
-        self.central_widget = self.centralWidget()  # Get the central widget from the loaded .ui file
-        self.layout = self.central_widget.layout()  # Access the layout of the central widget
-        self.layout.addWidget(self.export_button, alignment=Qt.AlignBottom)  # Add button at the bottom
+        # Created export button above "Notifications" (default).
+        self.pushButton_12.clicked.connect(self.run_script)  # Connect button to run script
 
         # Show the app
         self.show()
