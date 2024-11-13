@@ -16,23 +16,24 @@ volume = cast(interface, POINTER(IAudioEndpointVolume))
 # current = volume.GetMasterVolumeLevel()
 # volume.SetMasterVolumeLevel(current + 6.0, None)
 
-#loop 10 times
-for _ in range(30):
-    # find all apps that are running
-    sessions = AudioUtilities.GetAllSessions()
+def audio():
+    #loop 10 times
+    for _ in range(30):
+        # find all apps that are running
+        sessions = AudioUtilities.GetAllSessions()
 
-    # loop through apps
-    for session in sessions:
-        volume = session._ctl.QueryInterface(ISimpleAudioVolume)
+        # loop through apps
+        for session in sessions:
+            volume = session._ctl.QueryInterface(ISimpleAudioVolume)
 
-        # set volume of all apps running
-        if session.Process:
-            # set volume of app randomly between 0 and 1 inclusive (0 = 0, 1 = 100)
-            random_volume = random.random()
-            volume.SetMasterVolume(random_volume, None)
+            # set volume of all apps running
+            if session.Process:
+                # set volume of app randomly between 0 and 1 inclusive (0 = 0, 1 = 100)
+                random_volume = random.random()
+                volume.SetMasterVolume(random_volume, None)
 
-    random_delay = random.randint(15,30)
-    print("wait")
-    time.sleep(random_delay)
+        random_delay = random.randint(15,30)
+        print("wait")
+        time.sleep(random_delay)
 
-print("complete")
+    print("complete")
