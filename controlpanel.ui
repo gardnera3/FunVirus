@@ -34,7 +34,7 @@
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
-#pushButton_2, #pushButton_4, #pushButton_8, #pushButton_10{
+#pushButton_2, #pushButton_4, #pushButton_8, #pushButton_10, #pushButton_12 {
 background-color:#1f232a;
 border-style: solid;
 border-color: #16191d;
@@ -1006,8 +1006,8 @@ border-radius: 10px;
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>814</width>
-                      <height>568</height>
+                      <width>901</width>
+                      <height>474</height>
                      </rect>
                     </property>
                     <property name="styleSheet">
@@ -1101,8 +1101,8 @@ The top left tabs work for now, working on the other ones.</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>818</width>
-                      <height>318</height>
+                      <width>822</width>
+                      <height>322</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_14">
@@ -1524,8 +1524,8 @@ border-radius: 10px;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>94</width>
-                      <height>24</height>
+                      <width>51</width>
+                      <height>22</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_15">
@@ -1589,8 +1589,8 @@ border-radius: 10px;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>94</width>
-                      <height>24</height>
+                      <width>51</width>
+                      <height>16</height>
                      </rect>
                     </property>
                     <widget class="QLabel" name="label_30">
@@ -1642,8 +1642,8 @@ border-radius: 10px;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>94</width>
-                      <height>24</height>
+                      <width>51</width>
+                      <height>16</height>
                      </rect>
                     </property>
                     <widget class="QLabel" name="label_31">
@@ -1929,6 +1929,25 @@ border-radius: 10px;</string>
        <item>
         <widget class="QWidget" name="popupNotificationContainer" native="true">
          <layout class="QVBoxLayout" name="verticalLayout_20">
+          <item>
+           <widget class="QPushButton" name="pushButton_12">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Export</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/images/Assets/icons/upload.svg</normaloff>:/images/Assets/icons/upload.svg</iconset>
+            </property>
+           </widget>
+          </item>
           <item alignment="Qt::AlignBottom">
            <widget class="QWidget" name="popupNotificationSubContainer" native="true">
             <layout class="QVBoxLayout" name="verticalLayout_21">
