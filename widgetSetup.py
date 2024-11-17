@@ -1,7 +1,7 @@
-from PyQt5.QtCore import Qt, reset
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QCursor
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QPushButton, QFrame
+from PyQt5.QtWidgets import QPushButton, QFrame, QMenu
 import os
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -39,6 +39,7 @@ def widgetSetup(window):
     window.pushButton_8.clicked.connect(lambda: closeSubMenu(window))
     window.pushButton_10.clicked.connect(lambda: changeQuickInfo(window))
     window.pushButton_11.clicked.connect(lambda: changeQuickInfo(window))
+    window.pushButton_6.clicked.connect(lambda: openProfile(window))
 
     ## Tabs
     window.homeButton.clicked.connect(lambda: homeButton(window))
@@ -75,6 +76,62 @@ def widgetSetup(window):
             height: 20px;
         }}
         """)
+    window.randomAudioMixing.clicked.connect(lambda: randomAudioMixing(window))
+    window.randomAudioMixing.setStyleSheet(f"""
+            QCheckBox::indicator {{
+                image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+            """)
+    window.randomAudio.clicked.connect(lambda: randomAudio(window))
+    window.randomAudio.setStyleSheet(f"""
+                QCheckBox::indicator {{
+                    image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                    width: 25px;
+                    height: 20px;
+                }}
+                """)
+    window.BSOD.clicked.connect(lambda: BSOD(window))
+    window.BSOD.setStyleSheet(f"""
+                    QCheckBox::indicator {{
+                        image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                        width: 25px;
+                        height: 20px;
+                    }}
+                    """)
+    window.screenRotation.clicked.connect(lambda: screenRotation(window))
+    window.screenRotation.setStyleSheet(f"""
+                        QCheckBox::indicator {{
+                            image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                            width: 25px;
+                            height: 20px;
+                        }}
+                        """)
+    window.notifications.clicked.connect(lambda: notifications(window))
+    window.notifications.setStyleSheet(f"""
+                            QCheckBox::indicator {{
+                                image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                                width: 25px;
+                                height: 20px;
+                            }}
+                            """)
+    window.youtubeBrainrot.clicked.connect(lambda: youtubeBrainrot(window))
+    window.youtubeBrainrot.setStyleSheet(f"""
+                                QCheckBox::indicator {{
+                                    image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                                    width: 25px;
+                                    height: 20px;
+                                }}
+                                """)
+    window.updateScreen.clicked.connect(lambda: updateScreen(window))
+    window.updateScreen.setStyleSheet(f"""
+                                    QCheckBox::indicator {{
+                                        image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                                        width: 25px;
+                                        height: 20px;
+                                    }}
+                                    """)
     ## Comboboxes
     window.comboBox.currentIndexChanged.connect(lambda: visualsPresets(window))
     window.comboBox.addItems(["Default...", "Stewie Mode", "Thanos Mode", "Sonic Mode"])
@@ -102,13 +159,19 @@ def widgetSetup(window):
                     selection-background-color: #7289da;
                     selection-color: #424549;
                     padding: 3px;
+                    background-color: #1e2124;
                 }}
                 QComboBox QAbstractItemView {{
                     background-color: #1e2124;
                     color: white;
                     selection-background-color: #7289da;
                     selection-color: white;
-                    border: 1px solid #444;
+                    border-left: 2px solid #444;
+                    border-right: 2px solid #444;
+                    border-bottom: 2px solid #444;
+                    border-top: 1px solid #444;
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
                     padding: 5px;
                     margin: 0px;
                     outline: 0px;
@@ -455,3 +518,125 @@ def changeQuickInfo(window):
         window.rightMenuContainer.show()
     else:
         window.rightMenuContainer.hide()
+
+def openProfile(window):
+    os.startfile(os.path.join(os.path.expanduser("~")))
+def randomAudioMixing(window):
+    if window.randomAudioMixing.isChecked():
+        window.randomAudioMixing.setStyleSheet(f"""
+            QCheckBox::indicator:checked {{
+                image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+    else:
+        window.randomAudioMixing.setStyleSheet(f"""
+            QCheckBox::indicator:unchecked {{
+                image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+def randomAudio(window):
+    if window.randomAudio.isChecked():
+        window.randomAudio.setStyleSheet(f"""
+            QCheckBox::indicator:checked {{
+                image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+    else:
+        window.randomAudio.setStyleSheet(f"""
+            QCheckBox::indicator:unchecked {{
+                image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+def BSOD(window):
+    if window.BSOD.isChecked():
+        window.BSOD.setStyleSheet(f"""
+            QCheckBox::indicator:checked {{
+                image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+    else:
+        window.BSOD.setStyleSheet(f"""
+            QCheckBox::indicator:unchecked {{
+                image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+def screenRotation(window):
+    if window.screenRotation.isChecked():
+        window.screenRotation.setStyleSheet(f"""
+            QCheckBox::indicator:checked {{
+                image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+    else:
+        window.screenRotation.setStyleSheet(f"""
+            QCheckBox::indicator:unchecked {{
+                image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+def notifications(window):
+    if window.notifications.isChecked():
+        window.notifications.setStyleSheet(f"""
+            QCheckBox::indicator:checked {{
+                image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+    else:
+        window.notifications.setStyleSheet(f"""
+            QCheckBox::indicator:unchecked {{
+                image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+def youtubeBrainrot(window):
+    if window.youtubeBrainrot.isChecked():
+        window.youtubeBrainrot.setStyleSheet(f"""
+            QCheckBox::indicator:checked {{
+                image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+    else:
+        window.youtubeBrainrot.setStyleSheet(f"""
+            QCheckBox::indicator:unchecked {{
+                image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+def updateScreen(window):
+    if window.updateScreen.isChecked():
+        window.updateScreen.setStyleSheet(f"""
+            QCheckBox::indicator:checked {{
+                image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
+    else:
+        window.updateScreen.setStyleSheet(f"""
+            QCheckBox::indicator:unchecked {{
+                image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
+                width: 25px;
+                height: 20px;
+            }}
+        """)
