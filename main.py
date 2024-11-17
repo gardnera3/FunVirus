@@ -1,9 +1,8 @@
 import sys
-import subprocess
 from PyQt5 import uic
 from PyQt5.QtCore import Qt, QPoint
-from PyQt5.QtGui import QIcon, QPalette, QColor
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QApplication, QMainWindow
 import resources_rc  # Import the compiled resource file
 from widgetSetup import widgetSetup
 
@@ -13,18 +12,12 @@ class UI(QMainWindow):
         uic.loadUi("controlpanel.ui", self)  # Load the UI file
         # Remove tab bar on top
         self.setWindowFlags(Qt.FramelessWindowHint)
+        # Set the size of the window (default, at start)
+        self.resize(1433, 825)
         # Call widgetSetup (button functions, checkboxes, etc.)
         widgetSetup(self)
-
-        # Created export button above "Notifications" (default).
-        self.pushButton_12.clicked.connect(self.run_script)  # Connect button to run script
-
         # Show the app
         self.show()
-
-    def run_script(self):
-        # Run the external Python script
-        subprocess.Popen(["python", "run.py"])
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
@@ -66,19 +59,10 @@ class UI(QMainWindow):
 # Main
 def main():
     app = QApplication(sys.argv)
+
     # Load the main window
     UIWindow = UI()
     app.exec_()
-
-    toggle = [0,0,0,0,0,0,0,0]
-    # 0 = stewie.py
-    # 1 = BSOD.py
-    # 2 = UpdateScreen.py
-    # 3 = notifications.py
-    # 4 = play_sound.py
-    # 5 = audio.py
-    # 6 = youtube.py
-    # 7 = rotate.py
 
 # ---> Startup <---
 if __name__ == '__main__':
