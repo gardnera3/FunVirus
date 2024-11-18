@@ -1,4 +1,5 @@
 import sys
+import subprocess
 from PyQt5 import uic
 from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtGui import QIcon
@@ -18,6 +19,12 @@ class UI(QMainWindow):
         widgetSetup(self)
         # Show the app
         self.show()
+
+        self.pushButton_12.clicked.connect(self.run_script)
+
+    def run_script(self):
+        # Run the external Python script
+        subprocess.Popen(["python", "run.py"])
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
