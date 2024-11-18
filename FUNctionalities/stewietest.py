@@ -2,7 +2,16 @@ import tkinter as tk
 from PIL import Image, ImageTk  # Requires the Pillow library
 
 # Load the GIF and split it into frames
-V1 = [0, 0, 5, 3, 'assets\stewie.gif']  # Change this to your GIF file. V1[2] = dx, V1[3] = dy
+gif = 'assets\stewie.gif'
+gifselection = 0
+
+if gifselection == 1:
+    gif = 'assets\sonic.gif'
+
+if gifselection == 0:
+    gif = 'assets\stewie.gif'
+
+V1 = [0, 0, 5, 3, gif]  # Change this to your GIF file. V1[2] = dx, V1[3] = dy
 
 # Select a color as the transparent color
 TRANSPARENT_COLOR = '#abcdef'
