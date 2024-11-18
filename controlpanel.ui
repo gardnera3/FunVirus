@@ -1017,8 +1017,8 @@ border-radius: 10px;
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>813</width>
-                      <height>536</height>
+                      <width>1002</width>
+                      <height>474</height>
                      </rect>
                     </property>
                     <property name="styleSheet">
@@ -1126,8 +1126,8 @@ border-radius: 10px;
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>818</width>
-                      <height>519</height>
+                      <width>822</width>
+                      <height>322</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_14">
@@ -1549,8 +1549,8 @@ border-radius: 10px;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>813</width>
-                      <height>536</height>
+                      <width>94</width>
+                      <height>24</height>
                      </rect>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_15">
@@ -1716,8 +1716,8 @@ border-radius: 10px;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>813</width>
-                      <height>536</height>
+                      <width>94</width>
+                      <height>24</height>
                      </rect>
                     </property>
                     <widget class="QLabel" name="label_38">
@@ -1931,8 +1931,8 @@ border-radius: 10px;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>813</width>
-                      <height>536</height>
+                      <width>94</width>
+                      <height>24</height>
                      </rect>
                     </property>
                     <widget class="QLabel" name="label_41">
@@ -2184,7 +2184,7 @@ border-radius: 10px;</string>
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignTop">
+                    <item alignment="Qt::AlignHCenter|Qt::AlignTop">
                      <widget class="QLabel" name="label_44">
                       <property name="font">
                        <font>
@@ -2197,9 +2197,12 @@ border-radius: 10px;</string>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
                       </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
                      </widget>
                     </item>
-                    <item>
+                    <item alignment="Qt::AlignHCenter">
                      <widget class="QLabel" name="label_45">
                       <property name="font">
                        <font>
@@ -2211,6 +2214,9 @@ border-radius: 10px;</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
                       </property>
                      </widget>
                     </item>
