@@ -320,6 +320,7 @@ def popupsButton(window):
         """)
 def pngCheck(window):
     toggleVisualsCheckboxes(window, window.pngCheckbox)
+    toggleTKinterCheckboxes(window, window.pngCheckbox)
     if window.pngCheckbox.isChecked():
         window.pngCheckbox.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
@@ -339,6 +340,7 @@ def pngCheck(window):
 
 def gifCheck(window):
     toggleVisualsCheckboxes(window, window.gifCheckbox)
+    toggleTKinterCheckboxes(window, window.gifCheckbox)
     if window.gifCheckbox.isChecked():
         window.gifCheckbox.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
@@ -358,6 +360,7 @@ def gifCheck(window):
 
 def movCheck(window):
     toggleVisualsCheckboxes(window, window.movCheckbox)
+    toggleTKinterCheckboxes(window, window.movCheckbox)
     if window.movCheckbox.isChecked():
         window.movCheckbox.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
@@ -521,6 +524,7 @@ def changeQuickInfo(window):
 
 def openProfile(window):
     os.startfile(os.path.join(os.path.expanduser("~")))
+
 def randomAudioMixing(window):
     if window.randomAudioMixing.isChecked():
         window.randomAudioMixing.setStyleSheet(f"""
@@ -556,6 +560,7 @@ def randomAudio(window):
             }}
         """)
 def BSOD(window):
+    toggleTKinterCheckboxes(window, window.BSOD)
     if window.BSOD.isChecked():
         window.BSOD.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
@@ -573,6 +578,7 @@ def BSOD(window):
             }}
         """)
 def screenRotation(window):
+    toggleTKinterCheckboxes(window, window.screenRotation)
     if window.screenRotation.isChecked():
         window.screenRotation.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
@@ -624,6 +630,7 @@ def youtubeBrainrot(window):
             }}
         """)
 def updateScreen(window):
+    toggleTKinterCheckboxes(window, window.updateScreen)
     if window.updateScreen.isChecked():
         window.updateScreen.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
@@ -640,3 +647,16 @@ def updateScreen(window):
                 height: 20px;
             }}
         """)
+
+def toggleTKinterCheckboxes(window, current_checkbox):
+    # List of all the checkboxes
+    checkboxes = [window.BSOD, window.screenRotation, window.updateScreen, window.pngCheckbox, window.gifCheckbox, window.movCheckbox]
+    if current_checkbox.isChecked():
+        # Disable all other checkboxes
+        for checkbox in checkboxes:
+            if checkbox != current_checkbox:
+                checkbox.setDisabled(True)
+    else:
+        # Enable all checkboxes if the current one is unchecked
+        for checkbox in checkboxes:
+            checkbox.setEnabled(True)
