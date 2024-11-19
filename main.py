@@ -23,7 +23,17 @@ class UI(QMainWindow):
         self.pushButton_12.clicked.connect(self.run_script)
 
     def run_script(self):
-        # Run the external Python script
+        slider1_value = self.horizontalSlider.value()
+        slider2_value = self.horizontalSlider2.value()
+        combobox_value = self.comboBox.currentText()
+
+        with open('FUNctionalities/stewieSettings', 'w') as f:
+            # Write data to the file
+            f.write(f'{int(slider1_value)}\n')
+            f.write(f'{int(slider2_value)}\n')
+            f.write(f'{combobox_value}\n')
+        f.close()
+
         subprocess.Popen(["python", "run.py"])
 
     def mousePressEvent(self, event):
