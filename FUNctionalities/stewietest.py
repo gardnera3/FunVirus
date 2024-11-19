@@ -1,15 +1,26 @@
 import tkinter as tk
+import os
 from PIL import Image, ImageTk  # Requires the Pillow library
 
-# Load the GIF and split it into frames
-gif = 'assets\stewie.gif'
-gifselection = 0
+current_directory = os.path.dirname(os.path.abspath(__file__))
+with open('stewieSettings', 'r') as f:
+    # Default is '100'
+    animationSpeed = f.readline().strip()
+    # Default is = '50'
+    dragSpeed = f.readline().strip()
+    # Default is 'Stewie Mode'
+    gifselection = f.readline().strip()
+f.close()
 
-if gifselection == 1:
-    gif = 'assets\sonic.gif'
+if gifselection == 'Sonic Mode':
+    gif = os.path.join(current_directory, '..', 'Assets', 'sonic.gif')
+elif gifselection == 'Stewie Mode':
+    gif = os.path.join(current_directory, '..', 'Assets', 'stewie.gif')
+elif gifselection == 'Thanos Mode':
+    gif = os.path.join(current_directory, '..', 'Assets', 'thanos.gif')
+else:
+    gif = os.path.join(current_directory, '..', 'Assets', 'stewie.gif')
 
-if gifselection == 0:
-    gif = 'assets\stewie.gif'
 
 V1 = [0, 0, 5, 3, gif]  # Change this to your GIF file. V1[2] = dx, V1[3] = dy
 
@@ -53,7 +64,7 @@ def animate_gif():
     global frame_index
     frame_index = (frame_index + 1) % len(frames)  # Loop through frames
     label.config(image=frames[frame_index])  # Update the label with the new frame
-    root.after(100, animate_gif)  # Adjust the delay to control the speed of the animation
+    root.after(animationSpeed, animate_gif)  # Adjust the delay to control the speed of the animation
 
 # Function to move the window automatically and bounce on edges
 def move_window():
@@ -74,7 +85,7 @@ def move_window():
     # Update window position
     root.geometry(f'+{V1[0]}+{V1[1]}')
 
-    root.after(50, move_window)  # Repeat after 50ms to create continuous movement
+    root.after(dragSpeed, move_window)  # Repeat after 50ms to create continuous movement
 
 # Bind dragging events to the window
 root.bind('<Button-1>', start_drag)
