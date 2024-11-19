@@ -1,7 +1,7 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QCursor
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QPushButton, QFrame, QMenu
+from PyQt5.QtWidgets import QPushButton, QFrame, QSlider
 import os
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -51,25 +51,21 @@ def widgetSetup(window):
     window.infoButton.clicked.connect(lambda: infoButton(window))
     window.helpButton.clicked.connect(lambda: helpButton(window))
 
+    # Configure horizontalSlider
+    window.horizontalSlider = window.findChild(QSlider, 'horizontalSlider')
+    window.horizontalSlider.setMinimum(1)
+    window.horizontalSlider.setMaximum(500)
+    window.horizontalSlider.setValue(100)
+
+    # Configure horizontalSlider2
+    window.horizontalSlider2 = window.findChild(QSlider, 'horizontalSlider2')
+    window.horizontalSlider2.setMinimum(1)
+    window.horizontalSlider2.setMaximum(500)
+    window.horizontalSlider2.setValue(50)
+
     ## Checkboxes
-    window.pngCheckbox.clicked.connect(lambda: pngCheck(window))
-    window.pngCheckbox.setStyleSheet(f"""
-        QCheckBox::indicator {{
-            image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
-            width: 25px;
-            height: 20px;
-        }}
-        """)
-    window.gifCheckbox.clicked.connect(lambda: gifCheck(window))
-    window.gifCheckbox.setStyleSheet(f"""
-        QCheckBox::indicator {{
-            image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
-            width: 25px;
-            height: 20px;
-        }}
-        """)
-    window.movCheckbox.clicked.connect(lambda: movCheck(window))
-    window.movCheckbox.setStyleSheet(f"""
+    window.spriteActive.clicked.connect(lambda: spriteActivation(window))
+    window.spriteActive.setStyleSheet(f"""
         QCheckBox::indicator {{
             image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
             width: 25px;
@@ -318,11 +314,10 @@ def popupsButton(window):
                 background-color: #16191d;
             }
         """)
-def pngCheck(window):
-    toggleVisualsCheckboxes(window, window.pngCheckbox)
-    toggleTKinterCheckboxes(window, window.pngCheckbox)
-    if window.pngCheckbox.isChecked():
-        window.pngCheckbox.setStyleSheet(f"""
+def spriteActivation(window):
+    toggleTKinterCheckboxes(window, window.spriteActive)
+    if window.spriteActive.isChecked():
+        window.spriteActive.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
                 image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
                 width: 25px;
@@ -330,65 +325,13 @@ def pngCheck(window):
             }}
         """)
     else:
-        window.pngCheckbox.setStyleSheet(f"""
+        window.spriteActive.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
                 width: 25px;
                 height: 20px;
             }}
         """)
-
-def gifCheck(window):
-    toggleVisualsCheckboxes(window, window.gifCheckbox)
-    toggleTKinterCheckboxes(window, window.gifCheckbox)
-    if window.gifCheckbox.isChecked():
-        window.gifCheckbox.setStyleSheet(f"""
-            QCheckBox::indicator:checked {{
-                image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
-                width: 25px;
-                height: 20px;
-            }}
-        """)
-    else:
-        window.gifCheckbox.setStyleSheet(f"""
-            QCheckBox::indicator:unchecked {{
-                image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
-                width: 25px;
-                height: 20px;
-            }}
-        """)
-
-def movCheck(window):
-    toggleVisualsCheckboxes(window, window.movCheckbox)
-    toggleTKinterCheckboxes(window, window.movCheckbox)
-    if window.movCheckbox.isChecked():
-        window.movCheckbox.setStyleSheet(f"""
-            QCheckBox::indicator:checked {{
-                image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
-                width: 25px;
-                height: 20px;
-            }}
-        """)
-    else:
-        window.movCheckbox.setStyleSheet(f"""
-            QCheckBox::indicator:unchecked {{
-                image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
-                width: 25px;
-                height: 20px;
-            }}
-        """)
-def toggleVisualsCheckboxes(window, current_checkbox):
-    # List of all the checkboxes
-    checkboxes = [window.pngCheckbox, window.gifCheckbox, window.movCheckbox]
-    if current_checkbox.isChecked():
-        # Disable all other checkboxes
-        for checkbox in checkboxes:
-            if checkbox != current_checkbox:
-                checkbox.setDisabled(True)
-    else:
-        # Enable all checkboxes if the current one is unchecked
-        for checkbox in checkboxes:
-            checkbox.setEnabled(True)
 
 def changeNotifs(window):
     if window.popupNotificationSubContainer.isHidden():
@@ -650,7 +593,7 @@ def updateScreen(window):
 
 def toggleTKinterCheckboxes(window, current_checkbox):
     # List of all the checkboxes
-    checkboxes = [window.BSOD, window.screenRotation, window.updateScreen, window.pngCheckbox, window.gifCheckbox, window.movCheckbox]
+    checkboxes = [window.BSOD, window.screenRotation, window.updateScreen, window.spriteActive]
     if current_checkbox.isChecked():
         # Disable all other checkboxes
         for checkbox in checkboxes:
