@@ -3,7 +3,6 @@ from PyQt5.QtGui import QCursor
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QPushButton, QFrame, QSlider
 import os
-from Virus import toggle_array
 toggle_array2 = [0, 0, 0, 0, 0, 0, 0, 0]
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -559,8 +558,8 @@ def notifications(window):
         """)
 def youtubeBrainrot(window):
     if window.youtubeBrainrot.isChecked():
-        toggle_array[6] = 1
-        print(toggle_array)
+        toggle_array2[6] = 1
+        print(toggle_array2)
         window.youtubeBrainrot.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
                 image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
@@ -569,8 +568,8 @@ def youtubeBrainrot(window):
             }}
         """)
     else:
-        toggle_array[6] = 0
-        print(toggle_array)
+        toggle_array2[6] = 0
+        print(toggle_array2)
         window.youtubeBrainrot.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});

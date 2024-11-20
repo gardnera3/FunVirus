@@ -4,7 +4,13 @@ import time
 
 
 # Sample toggle array and file array
-toggle_array = [0, 0, 0, 0, 0, 0, 0, 0]
+toggle_array = []
+
+with open('Assets/toggle.txt', 'r') as file:
+    for line in file:
+        toggle_array.append(int(line.strip()))  # Call strip() with parentheses
+
+print(toggle_array)
 
 # def update_toggle(index, value):
 #     """Update the toggle array at a specific index."""

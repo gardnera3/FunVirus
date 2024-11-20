@@ -1,7 +1,7 @@
 import subprocess
 import os
 import shutil
-import Virus
+
 
 # Specify the path to your Python script and assets folder
 script_path = "Virus.py"
@@ -38,7 +38,7 @@ if os.path.isfile(script_path):
         # Run PyInstaller to create the executable
         result = subprocess.run(pyinstaller_cmd, check=True)
         print("PyInstaller ran successfully. Check the 'dist' folder for the executable.")
-        print(Virus.toggle_array)
+
         # Check if assets folder needs to be manually copied to dist (for testing or additional files)
         dist_assets_path = os.path.join("dist", "assets")
         if not os.path.exists(dist_assets_path):

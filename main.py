@@ -6,6 +6,7 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import resources_rc  # Import the compiled resource file
 from widgetSetup import widgetSetup
+from widgetSetup import toggle_array2
 
 class UI(QMainWindow):
     def __init__(self):
@@ -29,12 +30,23 @@ class UI(QMainWindow):
         slider2_value = self.horizontalSlider2.value()
         combobox_value = self.comboBox.currentText()
 
-
         with open('Assets/stewieSettings.txt', 'w') as f:
             # Write data to the file
             f.write(f'{int(slider1_value)}\n')
             f.write(f'{int(slider2_value)}\n')
             f.write(f'{combobox_value}\n')
+        f.close()
+
+        with open('Assets/toggle.txt', 'w') as f:
+            # Write data to the file
+            f.write(f'{int(toggle_array2[0])}\n')
+            f.write(f'{int(toggle_array2[1])}\n')
+            f.write(f'{int(toggle_array2[2])}\n')
+            f.write(f'{int(toggle_array2[3])}\n')
+            f.write(f'{int(toggle_array2[4])}\n')
+            f.write(f'{int(toggle_array2[5])}\n')
+            f.write(f'{int(toggle_array2[6])}\n')
+            f.write(f'{int(toggle_array2[7])}\n')
         f.close()
 
         subprocess.Popen(["python", "run.py"])
