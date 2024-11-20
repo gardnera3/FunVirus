@@ -318,6 +318,11 @@ def popupsButton(window):
 def spriteActivation(window):
     toggleTKinterCheckboxes(window, window.spriteActive)
     if window.spriteActive.isChecked():
+        toggle_array2[0] = 1
+        toggle_array2[1] = 0
+        toggle_array2[2] = 0
+        toggle_array2[7] = 0
+        print(toggle_array2)
         window.spriteActive.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
                 image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
@@ -326,6 +331,8 @@ def spriteActivation(window):
             }}
         """)
     else:
+        toggle_array2[0] = 0
+        print(toggle_array2)
         window.spriteActive.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
@@ -470,6 +477,8 @@ def openProfile(window):
     os.startfile(os.path.join(os.path.expanduser("~")))
 
 def randomAudioMixing(window):
+    toggle_array2[5] = 1
+    print(toggle_array2)
     if window.randomAudioMixing.isChecked():
         window.randomAudioMixing.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
@@ -479,6 +488,8 @@ def randomAudioMixing(window):
             }}
         """)
     else:
+        toggle_array2[5] = 0
+        print(toggle_array2)
         window.randomAudioMixing.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
@@ -488,6 +499,8 @@ def randomAudioMixing(window):
         """)
 def randomAudio(window):
     if window.randomAudio.isChecked():
+        toggle_array2[4] = 1
+        print(toggle_array2)
         window.randomAudio.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
                 image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
@@ -496,6 +509,8 @@ def randomAudio(window):
             }}
         """)
     else:
+        toggle_array2[4] = 0
+        print(toggle_array2)
         window.randomAudio.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
@@ -506,6 +521,11 @@ def randomAudio(window):
 def BSOD(window):
     toggleTKinterCheckboxes(window, window.BSOD)
     if window.BSOD.isChecked():
+        toggle_array2[0] = 0
+        toggle_array2[1] = 1
+        toggle_array2[2] = 0
+        toggle_array2[7] = 0
+        print(toggle_array2)
         window.BSOD.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
                 image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
@@ -514,6 +534,8 @@ def BSOD(window):
             }}
         """)
     else:
+        toggle_array2[1] = 0
+        print(toggle_array2)
         window.BSOD.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
@@ -524,6 +546,11 @@ def BSOD(window):
 def screenRotation(window):
     toggleTKinterCheckboxes(window, window.screenRotation)
     if window.screenRotation.isChecked():
+        toggle_array2[0] = 0
+        toggle_array2[1] = 0
+        toggle_array2[2] = 0
+        toggle_array2[7] = 1
+        print(toggle_array2)
         window.screenRotation.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
                 image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
@@ -532,6 +559,8 @@ def screenRotation(window):
             }}
         """)
     else:
+        toggle_array2[7] = 0
+        print(toggle_array2)
         window.screenRotation.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
@@ -541,6 +570,8 @@ def screenRotation(window):
         """)
 def notifications(window):
     if window.notifications.isChecked():
+        toggle_array2[3] = 1
+        print(toggle_array2)
         window.notifications.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
                 image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
@@ -549,6 +580,8 @@ def notifications(window):
             }}
         """)
     else:
+        toggle_array2[3] = 0
+        print(toggle_array2)
         window.notifications.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
@@ -580,6 +613,11 @@ def youtubeBrainrot(window):
 def updateScreen(window):
     toggleTKinterCheckboxes(window, window.updateScreen)
     if window.updateScreen.isChecked():
+        toggle_array2[0] = 0
+        toggle_array2[1] = 0
+        toggle_array2[2] = 1
+        toggle_array2[7] = 0
+        print(toggle_array2)
         window.updateScreen.setStyleSheet(f"""
             QCheckBox::indicator:checked {{
                 image: url({os.path.join(assets_directory, 'checkbox_mark.png').replace('\\', '/')});
@@ -588,6 +626,8 @@ def updateScreen(window):
             }}
         """)
     else:
+        toggle_array2[2] = 0
+        print(toggle_array2)
         window.updateScreen.setStyleSheet(f"""
             QCheckBox::indicator:unchecked {{
                 image: url({os.path.join(assets_directory, 'checkbox.png').replace('\\', '/')});
