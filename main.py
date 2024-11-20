@@ -27,7 +27,7 @@ class UI(QMainWindow):
         slider2_value = self.horizontalSlider2.value()
         combobox_value = self.comboBox.currentText()
 
-        with open('FUNctionalities/stewieSettings', 'w') as f:
+        with open('Assets/stewieSettings.txt', 'w') as f:
             # Write data to the file
             f.write(f'{int(slider1_value)}\n')
             f.write(f'{int(slider2_value)}\n')

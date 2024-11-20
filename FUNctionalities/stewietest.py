@@ -3,7 +3,7 @@ import os
 from PIL import Image, ImageTk  # Requires the Pillow library
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
-with open('stewieSettings', 'r') as f:
+with open('Assets/stewieSettings.txt', 'r') as f:
     # Default is '100'
     animationSpeed = f.readline().strip()
     # Default is = '50'

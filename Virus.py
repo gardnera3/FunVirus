@@ -1,7 +1,7 @@
 import importlib
 import threading
 import time
-# import main  # Uncomment this if `main` is needed
+import main  # Uncomment this if `main` is needed
 
 # Sample toggle array and file array
 toggle_array = [1, 0, 0, 0, 0, 0, 0, 0]
