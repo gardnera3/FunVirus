@@ -6,7 +6,6 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import resources_rc  # Import the compiled resource file
 from widgetSetup import widgetSetup
-from Virus import update_toggle
 
 class UI(QMainWindow):
     def __init__(self):
@@ -23,13 +22,13 @@ class UI(QMainWindow):
 
         # Connect buttons
         self.pushButton_12.clicked.connect(self.run_script)
-        self.youtubeBrainrot.clicked.connect(self.update_youtube_brainrot)
-
+    
     def run_script(self):
         """Run an external script and save settings."""
         slider1_value = self.horizontalSlider.value()
         slider2_value = self.horizontalSlider2.value()
         combobox_value = self.comboBox.currentText()
+
 
         with open('Assets/stewieSettings.txt', 'w') as f:
             # Write data to the file
@@ -39,11 +38,6 @@ class UI(QMainWindow):
         f.close()
 
         subprocess.Popen(["python", "run.py"])
-
-    def update_youtube_brainrot(self):
-        """Update toggle_array[6] when youtubeBrainrot is clicked."""
-        update_toggle(6, 1)  # Set toggle_array[6] to 1
-        print("youtubeBrainrot button clicked. toggle_array[6] updated.")
 
     def mousePressEvent(self, event):
         """Handle mouse press for dragging and resizing."""
