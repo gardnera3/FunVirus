@@ -12,7 +12,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.main.executor": "Run"
+    "Python.main.executor": "Run",
+    "Python.plays_sounds.executor": "Run"
   }
 }]]></component>
   <component name="TaskManager">

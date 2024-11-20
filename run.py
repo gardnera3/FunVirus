@@ -33,6 +33,11 @@ if os.path.isfile(script_path):
         script_path,
     ] + [f"--hidden-import={module}" for module in additional_modules]
 
+    requirements_path = "requirements.txt"  # Replace with your requirements file path
+    if os.path.isfile(requirements_path):
+        print("Installing dependencies using pip...")
+        subprocess.run(["pip", "install", "-r", requirements_path], check=True)
+
     # Run PyInstaller command
     try:
         # Run PyInstaller to create the executable
